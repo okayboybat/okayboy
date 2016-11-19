@@ -1,0 +1,1 @@
+a:5:{i:0;s:20:"personal_gustbook_id";i:1;s:11:"personal_id";i:2;s:11:"gustbook_id";s:3:"_pk";s:20:"personal_gustbook_id";s:5:"_type";a:3:{s:20:"personal_gustbook_id";s:7:"int(11)";s:11:"personal_id";s:7:"int(11)";s:11:"gustbook_id";s:7:"int(11)";}}

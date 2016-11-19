@@ -1,0 +1,12 @@
+
+										<td class="text-left">
+											<if condition="$sort['field'] eq '%FIELD%' AND $sort['type'] eq 'asc'" >
+												<a href="{:U('list', ['keyword'=>$search['keyword'], 'sortField'=>'%FIELD%', 'sortType'=>'desc'])}" class="asc">%FIELD%</a>
+											<elseif condition="$sort['field'] eq '%FIELD%' AND $sort['type'] eq 'desc'" />
+												<a href="{:U('list', ['keyword'=>$search['keyword'], 'sortField'=>'%FIELD%', 'sortType'=>'asc'])}" class="desc">%FIELD%</a>
+											<else />
+												<a href="{:U('list', ['keyword'=>$search['keyword'], 'sortField'=>'%FIELD%', 'sortType'=>'asc'])}">%FIELD%</a>
+											</if>
+										</td>
+										<!-- 一个字段 -->
+

@@ -1,0 +1,347 @@
+[ 2016-09-18T02:00:01+08:00 ] 42.156.139.105 /artcontent/id/7.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000016s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000728s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000961s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001030s ]
+SQL: SELECT * FROM article a left join personal p on a.user_id=p.user_id  WHERE ( article_id=7 ) LIMIT 1   [ RunTime:0.0013s ]
+SQL: SELECT * FROM answer a left join personal p on a.user_id=p.user_id  WHERE ( article_id=7 )  [ RunTime:0.0008s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000121s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000183s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.030757s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.030822s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000439s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000494s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001072s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001127s ]
+
+[ 2016-09-18T09:47:01+08:00 ] 45.32.61.106 /index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000017s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000731s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001021s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001087s ]
+SQL: SELECT art.article_id,art.content artcontent,art.user_id,art.title,art.add_time,p.nickname,c.cate_title,count(a.article_id) browse_number FROM article art left join personal p using(user_id) left join category c using(cate_id) left join answer a using(article_id)  GROUP BY art.article_id ORDER BY browse_number desc LIMIT 20   [ RunTime:0.0027s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000128s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000196s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.031924s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.031993s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000408s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000469s ]
+INFO: 
+INFO: 
+INFO: 
+
+[ 2016-09-18T10:05:17+08:00 ] 45.32.61.106 /index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000018s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000734s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000962s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001033s ]
+SQL: SELECT art.article_id,art.content artcontent,art.user_id,art.title,art.add_time,p.nickname,c.cate_title,count(a.article_id) browse_number FROM article art left join personal p using(user_id) left join category c using(cate_id) left join answer a using(article_id)  GROUP BY art.article_id ORDER BY browse_number desc LIMIT 20   [ RunTime:0.0027s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000164s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000238s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.032236s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.032305s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000417s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000479s ]
+INFO: 
+INFO: 
+INFO: 
+
+[ 2016-09-18T10:15:08+08:00 ] 60.14.254.39 /favicon.ico
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000017s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000108s ]
+
+[ 2016-09-18T10:21:32+08:00 ] 45.32.61.106 /index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000017s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000190s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000138s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000198s ]
+SQL: SELECT art.article_id,art.content artcontent,art.user_id,art.title,art.add_time,p.nickname,c.cate_title,count(a.article_id) browse_number FROM article art left join personal p using(user_id) left join category c using(cate_id) left join answer a using(article_id)  GROUP BY art.article_id ORDER BY browse_number desc LIMIT 20   [ RunTime:0.0023s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000109s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000169s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.011528s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.011596s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000153s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000203s ]
+INFO: 
+INFO: 
+INFO: 
+
+[ 2016-09-18T10:38:47+08:00 ] 45.32.61.106 /index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000017s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000188s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000138s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000197s ]
+SQL: SELECT art.article_id,art.content artcontent,art.user_id,art.title,art.add_time,p.nickname,c.cate_title,count(a.article_id) browse_number FROM article art left join personal p using(user_id) left join category c using(cate_id) left join answer a using(article_id)  GROUP BY art.article_id ORDER BY browse_number desc LIMIT 20   [ RunTime:0.0022s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000109s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000169s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.011114s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.011180s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000147s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000225s ]
+INFO: 
+INFO: 
+INFO: 
+
+[ 2016-09-18T12:15:15+08:00 ] 45.32.61.106 /index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000017s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000198s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000144s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000208s ]
+SQL: SELECT art.article_id,art.content artcontent,art.user_id,art.title,art.add_time,p.nickname,c.cate_title,count(a.article_id) browse_number FROM article art left join personal p using(user_id) left join category c using(cate_id) left join answer a using(article_id)  GROUP BY art.article_id ORDER BY browse_number desc LIMIT 20   [ RunTime:0.0026s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000125s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000185s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.031374s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.031437s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000395s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000451s ]
+INFO: 
+INFO: 
+INFO: 
+
+[ 2016-09-18T12:44:37+08:00 ] 45.32.61.106 /index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000017s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000734s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000957s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001022s ]
+SQL: SELECT art.article_id,art.content artcontent,art.user_id,art.title,art.add_time,p.nickname,c.cate_title,count(a.article_id) browse_number FROM article art left join personal p using(user_id) left join category c using(cate_id) left join answer a using(article_id)  GROUP BY art.article_id ORDER BY browse_number desc LIMIT 20   [ RunTime:0.0025s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000127s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000195s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.031459s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.031524s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000403s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000462s ]
+INFO: 
+INFO: 
+INFO: 
+
+[ 2016-09-18T13:13:17+08:00 ] 45.32.61.106 /index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000017s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000737s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000960s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001027s ]
+SQL: SELECT art.article_id,art.content artcontent,art.user_id,art.title,art.add_time,p.nickname,c.cate_title,count(a.article_id) browse_number FROM article art left join personal p using(user_id) left join category c using(cate_id) left join answer a using(article_id)  GROUP BY art.article_id ORDER BY browse_number desc LIMIT 20   [ RunTime:0.0024s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000136s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000210s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.031969s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.032040s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000460s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000526s ]
+INFO: 
+INFO: 
+INFO: 
+
+[ 2016-09-18T13:38:44+08:00 ] 45.32.61.106 /index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000017s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000728s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000953s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001020s ]
+SQL: SELECT art.article_id,art.content artcontent,art.user_id,art.title,art.add_time,p.nickname,c.cate_title,count(a.article_id) browse_number FROM article art left join personal p using(user_id) left join category c using(cate_id) left join answer a using(article_id)  GROUP BY art.article_id ORDER BY browse_number desc LIMIT 20   [ RunTime:0.0027s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000134s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000203s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.031687s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.031754s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000423s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000482s ]
+INFO: 
+INFO: 
+INFO: 
+
+[ 2016-09-18T14:09:11+08:00 ] 45.32.61.106 /index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000017s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000730s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000960s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001026s ]
+SQL: SELECT art.article_id,art.content artcontent,art.user_id,art.title,art.add_time,p.nickname,c.cate_title,count(a.article_id) browse_number FROM article art left join personal p using(user_id) left join category c using(cate_id) left join answer a using(article_id)  GROUP BY art.article_id ORDER BY browse_number desc LIMIT 20   [ RunTime:0.0026s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000131s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000198s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.031850s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.031919s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000413s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000474s ]
+INFO: 
+INFO: 
+INFO: 
+
+[ 2016-09-18T14:36:34+08:00 ] 45.32.61.106 /index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000014s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000589s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000771s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000824s ]
+SQL: SELECT art.article_id,art.content artcontent,art.user_id,art.title,art.add_time,p.nickname,c.cate_title,count(a.article_id) browse_number FROM article art left join personal p using(user_id) left join category c using(cate_id) left join answer a using(article_id)  GROUP BY art.article_id ORDER BY browse_number desc LIMIT 20   [ RunTime:0.0020s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000109s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000170s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.025719s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.025775s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000362s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000412s ]
+INFO: 
+INFO: 
+INFO: 
+
+[ 2016-09-18T15:19:14+08:00 ] 45.32.61.106 /index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000017s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000733s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000951s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001017s ]
+SQL: SELECT art.article_id,art.content artcontent,art.user_id,art.title,art.add_time,p.nickname,c.cate_title,count(a.article_id) browse_number FROM article art left join personal p using(user_id) left join category c using(cate_id) left join answer a using(article_id)  GROUP BY art.article_id ORDER BY browse_number desc LIMIT 20   [ RunTime:0.0026s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000129s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000197s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.031939s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.032006s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000399s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000458s ]
+INFO: 
+INFO: 
+INFO: 
+
+[ 2016-09-18T16:02:57+08:00 ] 45.32.61.106 /index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000017s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000740s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000966s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001039s ]
+SQL: SELECT art.article_id,art.content artcontent,art.user_id,art.title,art.add_time,p.nickname,c.cate_title,count(a.article_id) browse_number FROM article art left join personal p using(user_id) left join category c using(cate_id) left join answer a using(article_id)  GROUP BY art.article_id ORDER BY browse_number desc LIMIT 20   [ RunTime:0.0026s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000129s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000195s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.032033s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.032100s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000418s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000480s ]
+INFO: 
+INFO: 
+INFO: 
+
+[ 2016-09-18T16:42:36+08:00 ] 45.32.61.106 /index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000018s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000738s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000964s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001036s ]
+SQL: SELECT art.article_id,art.content artcontent,art.user_id,art.title,art.add_time,p.nickname,c.cate_title,count(a.article_id) browse_number FROM article art left join personal p using(user_id) left join category c using(cate_id) left join answer a using(article_id)  GROUP BY art.article_id ORDER BY browse_number desc LIMIT 20   [ RunTime:0.0026s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000130s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000199s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.031664s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.031730s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000424s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000485s ]
+INFO: 
+INFO: 
+INFO: 
+
+[ 2016-09-18T17:39:30+08:00 ] 45.32.61.106 /index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000017s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000737s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001003s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001071s ]
+SQL: SELECT art.article_id,art.content artcontent,art.user_id,art.title,art.add_time,p.nickname,c.cate_title,count(a.article_id) browse_number FROM article art left join personal p using(user_id) left join category c using(cate_id) left join answer a using(article_id)  GROUP BY art.article_id ORDER BY browse_number desc LIMIT 20   [ RunTime:0.0026s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000130s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000197s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.031732s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.031798s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000406s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000464s ]
+INFO: 
+INFO: 
+INFO: 
+
+[ 2016-09-18T18:14:57+08:00 ] 45.32.61.106 /index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000016s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000739s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001001s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001066s ]
+SQL: SELECT art.article_id,art.content artcontent,art.user_id,art.title,art.add_time,p.nickname,c.cate_title,count(a.article_id) browse_number FROM article art left join personal p using(user_id) left join category c using(cate_id) left join answer a using(article_id)  GROUP BY art.article_id ORDER BY browse_number desc LIMIT 20   [ RunTime:0.0026s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000140s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000220s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.032448s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.032520s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000486s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000549s ]
+INFO: 
+INFO: 
+INFO: 
+
+[ 2016-09-18T21:32:45+08:00 ] 60.14.254.39 /favicon.ico
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000017s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000119s ]
+

@@ -1,0 +1,131 @@
+<extend name="Layout/back" />
+
+<block name="title">商品分类添加</block>
+
+<block name="content">
+
+	<div id="content">
+		<div class="page-header">
+			<div class="container-fluid">
+				<div class="pull-right">
+					<button type="submit" form="form-add" data-toggle="tooltip" title="保存" class="btn btn-primary"> <i class="fa fa-save"></i>
+					</button>
+					<a href="{:U('list')}" data-toggle="tooltip" title="取消" class="btn btn-default"> <i class="fa fa-reply"></i>
+					</a>
+				</div>
+				<h1>商品分类</h1>
+				<ul class="breadcrumb">
+					<li>
+						<a href="{:U('Manage/index')}">首页</a>
+					</li>
+					<li>
+						<a href="{:U('list')}">商品分类</a>
+					</li>
+				</ul>
+			</div>
+		</div>
+		<div class="container-fluid">
+			<div class="panel panel-default">
+				<div class="panel-heading">
+					<h3 class="panel-title">
+						<i class="fa fa-pencil"></i>
+						添加商品分类
+					</h3>
+				</div>
+				<div class="panel-body">
+					<form action="{:U('add')}" method="post" enctype="multipart/form-data" id="form-add" class="form-horizontal">
+						<ul class="nav nav-tabs">
+							<li class="active">
+								<a href="#tab-general" data-toggle="tab">基本信息</a>
+							</li>
+							<li class="">
+								<a href="#tab-seo" data-toggle="tab">SEO信息</a>
+							</li>
+						</ul>
+						<div class="tab-content">
+							<div class="tab-pane active" id="tab-general">
+
+																
+								<div class="form-group">
+									<label class="col-sm-2 control-label" for="input-title">分类</label>
+									<div class="col-sm-10">
+										<input type="text" name="title" value="" placeholder="分类" id="input-title" class="form-control" />
+									</div>
+								</div>
+								
+								<div class="form-group">
+									<label class="col-sm-2 control-label" for="input-parent_id">父级分类</label>
+									<div class="col-sm-10">
+										<select class="form-control" name="parent_id" id="input-parent_id">
+										<option value="0">顶级分类</option>
+										<volist name="category_list" id="category">
+											<option value="{$category['category_id']}">{:str_repeat('&nbsp;', $category['deep']*2)}{$category['title']}</option>	
+										</volist>
+										</select>
+
+									</div>
+								</div>
+								
+								<div class="form-group">
+									<label class="col-sm-2 control-label" for="input-sort_number">排序</label>
+									<div class="col-sm-10">
+										<input type="text" name="sort_number" value="0" placeholder="排序" id="input-sort_number" class="form-control" />
+									</div>
+								</div>
+								
+								<div class="form-group">
+									<label class="col-sm-2 control-label" for="input-image">图片</label>
+									<div class="col-sm-10">
+										<input type="file" name="image" value="" placeholder="image" id="input-image" class="" />
+									</div>
+								</div>
+								
+						
+								<div class="form-group">
+									<label class="col-sm-2 control-label" for="input-is_used">是否启用</label>
+									<div class="col-sm-10">
+										<input type="checkbox" name="is_used" value="1" id="input-is_used" class="form-control" checked />
+									</div>
+								</div>
+								
+								<div class="form-group">
+									<label class="col-sm-2 control-label" for="input-is_nav">是否在导航显示</label>
+									<div class="col-sm-10">
+										<input type="checkbox" name="is_nav" value="1" placeholder="" id="input-is_nav" class="form-control" />
+									</div>
+								</div>
+
+							</div>
+
+							<div class="tab-pane" id="tab-seo">
+
+																
+								<div class="form-group">
+									<label class="col-sm-2 control-label" for="input-meta_title">meta标题</label>
+									<div class="col-sm-10">
+										<input type="text" name="meta_title" value="" placeholder="meta标题" id="input-meta_title" class="form-control" />
+									</div>
+								</div>
+								
+								<div class="form-group">
+									<label class="col-sm-2 control-label" for="input-meta_keywords">meta关键字</label>
+									<div class="col-sm-10">
+										<input type="text" name="meta_keywords" value="" placeholder="meta关键字" id="input-meta_keywords" class="form-control" />
+									</div>
+								</div>
+								
+								<div class="form-group">
+									<label class="col-sm-2 control-label" for="input-meta_description">meta描述</label>
+									<div class="col-sm-10">
+										<textarea name="meta_description" id="input-meta_description" rows="4" class="form-control"></textarea>
+									</div>
+								</div>
+							</div>
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+
+</block>

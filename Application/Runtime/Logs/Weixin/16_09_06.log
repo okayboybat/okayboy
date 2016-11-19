@@ -1,0 +1,18 @@
+[ 2016-09-06T08:33:30+08:00 ] 103.7.30.105 /weixin.php/Index/index?signature=70908230ddb1f8dd338197a2fb5ac25bf346f491&timestamp=1473122015&nonce=666897738&openid=o5T-es1qbmw5EuSN8-Pa4a5qH7N8&encrypt_type=aes&msg_signature=19f919d18599ec472bb86ec360e258dcc50db6de
+ERR: 1146:Table 'a18659801344.index' doesn't exist
+ [ SQL语句 ] : SHOW COLUMNS FROM `index`
+ERR: 1146:Table 'a18659801344.index' doesn't exist
+ [ SQL语句 ] : SHOW COLUMNS FROM `index`
+
+[ 2016-09-06T08:37:27+08:00 ] 103.7.30.105 /weixin.php/Index/index?signature=abac5aec3c9115b0c9b185831fed76fb433d550d&timestamp=1473122252&nonce=1422883935&openid=o5T-es1qbmw5EuSN8-Pa4a5qH7N8&encrypt_type=aes&msg_signature=dfccd0528bc9896272045ead38cbfcf05271020b
+ERR: 1146:Table 'a18659801344.index' doesn't exist
+ [ SQL语句 ] : SHOW COLUMNS FROM `index`
+ERR: 1146:Table 'a18659801344.index' doesn't exist
+ [ SQL语句 ] : SHOW COLUMNS FROM `index`
+
+[ 2016-09-06T08:39:33+08:00 ] 103.7.30.105 /weixin.php/Index/index?signature=2d60c597974ec79c46bc8dbeea1c08b13ed277f4&timestamp=1473122378&nonce=1062369274&openid=o5T-es1qbmw5EuSN8-Pa4a5qH7N8&encrypt_type=aes&msg_signature=83fed485286d5f3f924f2403dc46d76e97507df9
+ERR: 1146:Table 'a18659801344.index' doesn't exist
+ [ SQL语句 ] : SHOW COLUMNS FROM `index`
+ERR: 1146:Table 'a18659801344.index' doesn't exist
+ [ SQL语句 ] : SHOW COLUMNS FROM `index`
+

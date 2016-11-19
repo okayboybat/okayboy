@@ -1,0 +1,55 @@
+.cate{
+		
+}
+.cate .allcate{
+	/*background: #9FCDDB;*/
+	width:200px;
+	font-size:36px;
+}
+.cate .catetitle{
+
+}
+.cate .catetitle span{
+	background: #9FCDDB;
+	display: inline-block;border-radius:10px;
+	width:150px;
+	height:56px;
+	line-height:56px;
+	text-align:center;
+	font-size:28px;
+	/*float:left;*/
+	margin: 10px 30px 10px 10px;
+}
+.cate .insertcate{margin-top:30px;}
+.cate .insertcate .one{
+	width:200px;
+	height:56px;font-size:38px;
+}
+.cate .insertcate .two{
+	line-height:56px;
+	font-size:28px;
+}
+.cate .insertcate .three{
+	line-height:56px;
+	height:30px;
+}
+.cate .insertcate .four{
+	background: #0194EF;color: white;font-size:28px;
+	line-height:56px;border-radius:10px; margin-top: 30px;
+	margin-left: 150px;
+	width:180px;
+	height:50px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+

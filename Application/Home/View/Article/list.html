@@ -1,0 +1,49 @@
+<include file="common/head" />
+
+<article class="blogs">
+<h1 class="t_nav"><span>既然来了，那么就留下你的足迹吧！</span>
+	<a href="{:U('/articleList')}" class="n1">List</a>
+	<if condition="session('user') eq true">
+		<a href="{:U('/articleAdd')}" class="n2">News</a>
+	<else />
+		<a href="#" onclick="hai()" class="n2" onclick="">News</a>
+		<script>
+			function hai(){alert('请先登录!')}
+		</script>
+	</if>
+</h1>
+<div class="bloglist left">
+   <div id="gustbook" class="cate">
+     	<volist name="art" id="row">
+   <!--wz-->
+    <div class="wz">
+    <h3>{$row['title']}</h3>
+	    <p class="dateview">
+		    <span>{$row['add_time']|date="Y-m-d",###}</span>
+		    <span>作者：<a href="{:U('/helist?id='.$row['user_id'])}">{$row['nickname']}</a></span>
+		    <span>分类：[<a href="#">{$row['cate_title']}</a>]</span>
+		    <span>评论：{$row['browse_number']}</span>
+	    </p>
+    <figure><img src="__PUBLIC__/Home/images/001.jpg"></figure>
+	    <ul>
+	      <p>
+	      	<?php
+            	$filepath = PUBLIC_PATH.'Static/Home/Article/';
+				$filename = $row['artcontent'];
+            	$content = file_get_contents($filepath.$filename);
+				$str = substr($content,0,300);
+				echo strip_tags($str,'<html><script><span><head><body><div><ul><li><p><span>').'...';
+            ?>
+	      </p>
+	      <a title="阅读全文" href="{:U('/artcontent?id='.$row['article_id'])}" target="_blank" class="readmore">阅读全文>></a>
+	    </ul>
+    <div class="clear"></div>
+    </div>
+    <br>
+   <!--end-->
+  </volist>
+   </div>
+</div>
+<include file="common/right" />
+</article>
+<include file="common/footer" />

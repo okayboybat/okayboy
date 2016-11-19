@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<dwsync>
+<file name="compile.compile_config.php" server="9fcd069a.7host.cn:90" local="131237379719351633" remote="131185981800000000" Dst="0" />
+<file name="compile.compile_custom_block.php" server="9fcd069a.7host.cn:90" local="131237379719820382" remote="131185981800000000" Dst="0" />
+<file name="compile.compile_if.php" server="9fcd069a.7host.cn:90" local="131237379721382895" remote="131185981800000000" Dst="0" />
+<file name="compile.compile_custom_function.php" server="9fcd069a.7host.cn:90" local="131237379721695331" remote="131185981800000000" Dst="0" />
+<file name="compile.generate_compiler_debug_output.php" server="9fcd069a.7host.cn:90" local="131237379722187211" remote="131185981800000000" Dst="0" />
+<file name="compile.parse_is_expr.php" server="9fcd069a.7host.cn:90" local="131237379723462123" remote="131185981800000000" Dst="0" />
+<file name="compile.include.php" server="9fcd069a.7host.cn:90" local="131237379724087134" remote="131185981800000000" Dst="0" />
+<file name="compile.section_start.php" server="9fcd069a.7host.cn:90" local="131237379724243442" remote="131185981800000000" Dst="0" />
+<file name="template.build_dir.php" server="9fcd069a.7host.cn:90" local="131237379726118419" remote="131185981800000000" Dst="0" />
+<file name="debug.tpl" server="9fcd069a.7host.cn:90" local="131237379726274602" remote="131185981800000000" Dst="0" />
+<file name="template.config_loader.php" server="9fcd069a.7host.cn:90" local="131237379726430929" remote="131185981800000000" Dst="0" />
+<file name="template.generate_debug_output.php" server="9fcd069a.7host.cn:90" local="131237379728774721" remote="131185981800000000" Dst="0" />
+<file name="template.destroy_dir.php" server="9fcd069a.7host.cn:90" local="131237379728774721" remote="131185981800000000" Dst="0" />
+<file name="template.fetch_compile_include.php" server="9fcd069a.7host.cn:90" local="131237379729243374" remote="131185981800000000" Dst="0" />
+</dwsync>

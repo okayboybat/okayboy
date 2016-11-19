@@ -1,0 +1,124 @@
+<extend name="Layout/home" />
+
+<block name="title"></block>
+
+<block name="content">
+	<div class="container">
+		<ul class="breadcrumb">
+			<li>
+				<a href="{:U('/index')}"> <i class="fa fa-home"></i>
+				</a>
+			</li>
+			<li>
+				<a href="#">购物车内的商品</a>
+			</li>
+		</ul>
+		<div class="row">
+			<div id="content" class="col-sm-12">
+				<h1>购物车内的商品&nbsp;(<span id="span-total_weight">{:sprintf('%.3f', $cart_info['total_weight']/1000)}</span>kg)</h1>
+				<form action="" method="post" enctype="multipart/form-data">
+					<div class="table-responsive">
+						<table class="table table-bordered">
+							<thead>
+								<tr>
+									<td class="text-center">图片</td>
+									<td class="text-left">商品名称</td>
+									<td class="text-left">数量</td>
+									<td class="text-right">单价</td>
+									<td class="text-right">总计</td>
+								</tr>
+							</thead>
+							<tbody>
+							<volist name="goods_list" id="goods">
+								<tr>
+									<td class="text-center">
+										<a href="{:U('/goods/' . $goods['goods_id'])}">
+											<img src="__PUBLIC__/Thumb/{$goods['info']['image_thumb']}" alt="{
+											$goods['info']['name']}" title="{
+											$goods['info']['name']}" class="img-thumbnail" style="max-height: 47px"/>
+										</a>
+									</td>
+									<td class="text-left">
+										<a href="{:U('/goods/' . $goods['goods_id'])}">{$goods['info']['name']}<br >{$goods['info']['option_str']}</a>
+									</td>
+									<td class="text-left">
+										<div class="input-group btn-block" style="max-width: 200px;">
+											<input type="text" name="quantity[{$key}]" value="{$goods['quantity']}" size="1" class="form-control" />
+											<span class="input-group-btn">
+												<button type="submit" data-toggle="tooltip" title="更新" class="btn btn-primary"> <i class="fa fa-refresh"></i>
+												</button>
+												<button type="button" title="移除" class="btn btn-danger btn-remove" data-key="{$key}">
+													<i class="fa fa-times-circle"></i>
+												</button>
+											</span>
+										</div>
+									</td>
+									<td class="text-right">￥{$goods['info']['price']}</td>
+									<td class="text-right">￥{$goods['info']['sum_price']}</td>
+								</tr>
+							</volist>
+							</tbody>
+						</table>
+					</div>
+				</form>
+
+				<div class="row">
+					<div class="col-sm-4 col-sm-offset-8">
+						<table class="table table-bordered">
+							<tr>
+								<td class="text-right"> <strong>商品总额:</strong>
+								</td>
+								<td class="text-right">￥<span id="span-total">{$cart_info['total']}</span></td>
+							</tr>
+							<!-- 
+							<tr>
+								<td class="text-right">
+									<strong>订单总额:</strong>
+								</td>
+								<td class="text-right">￥{$cart_info['total']}</td>
+							</tr> -->
+						</table>
+					</div>
+				</div>
+				<div class="buttons">
+					<div class="pull-left">
+						<a href="{:U('/index')}" class="btn btn-default">继续购物</a>
+					</div>
+					<div class="pull-right">
+						<a href="{:U('/checkout')}" class="btn btn-primary">去结账</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</block>
+
+<block name="bottomJS">
+
+<script>
+$('.btn-remove').click(function(evt) {
+	var currBtn = $(this);
+	// 删除当前的tr
+	currBtn.parents('tr').remove();
+
+	// 发出ajax请求, 删除购物车中的商品
+	var url = '{:U('/cartAjax')}';
+	var data = {
+		type: 'remove',
+		key: currBtn.data('key'),
+	};
+	$.post(url, data, function(response) {
+		// 获取到新的购物车信息, 更新页面
+		if (response.error == 0) {
+			$('#span-total_weight').html(response.info.total_weight.toFixed(3));
+			$('#span-total').html(response.info.total);
+		}
+
+		// 更新迷你购物车
+		refreshMiniCart();
+		
+	}, 'json');
+
+});
+</script>
+</block>

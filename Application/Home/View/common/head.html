@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>余温博客</title>
+<meta name="keywords" content="个人博客,余温个人博客," />
+<meta name="description" content="" />
+
+<link href="__PUBLIC__/Home/css/index.css" rel="stylesheet">
+<link href="__PUBLIC__/Home/css/style.css" rel="stylesheet">
+<link href="__PUBLIC__/Home/css/article.css" rel="stylesheet">
+<link href="__PUBLIC__/Home/css/ty.css" rel="stylesheet">
+<link href="__PUBLIC__/home/css/board.css" rel="stylesheet">
+<link href="__PUBLIC__/home/css/new.css" rel="stylesheet">
+
+<!-- 可视化文本编辑器 -->
+<link href="__PUBLIC__/Test/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+<link href="__PUBLIC__/Test/css/froala_editor.min.css" rel="stylesheet" type="text/css">
+
+<!--[if lt IE 9]>
+<script src="__PUBLIC__/Home/js/modernizr.js"></script>
+<![endif]-->
+
+<style>
+       #editor {width: 80%; margin: auto; text-align: left; }
+	   #editor li{text-align: center;margin-top:10px;}
+</style>
+
+</head>
+<body>
+
+<header>
+	<div><div style="float:right;margin-top:5px;">
+		<if condition="session('user') eq true">
+		欢迎您！ {:session('user')['nickname']}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+		<else />
+			<a href="{:U('/login')}">登录</a>&nbsp;&nbsp;&nbsp;
+			<a href="{:U('/register')}">注册</a>&nbsp;&nbsp;&nbsp;
+		</if>
+	</div></div>
+  <div id="logo"><a href="/"></a></div>
+  <nav class="topnav" id="topnav">
+      <a href="{:U('/index')}"><span>首页</span><span class="en">Honme</span></a>
+      <a href="{:U('/about')}"><span>关于博主</span><span class="en">About</span></a>
+      
+      <a href="{:U('/articleList')}"><span>文章</span><span class="en">Article</span></a>
+           
+      <if condition="session('?user')">
+      		<a href="{:U('/mood')}"><span>心情日记</span><span class="en">Diary</span></a>
+      		<a href="{:U('/gustbook')}"><span>留言版</span><span class="en">Gustbook</span></a>
+			<a href="{:U('/personal')}"><span>个人空间</span><span class="en">GeRen</span></a>
+		<else />
+			<a href="#" onclick="hai()"><span>心情日记</span><span class="en">Diary</span></a>
+			<a href="#" onclick="hai()"><span>留言版</span><span class="en">Gustbook</span></a>
+			<a href="#" onclick="hai()"><span>个人空间</span><span class="en">GeRen</span></a>
+			<script>
+				function hai(){alert('请先登录!')}
+			</script>
+		</if>
+  </nav>
+</header>

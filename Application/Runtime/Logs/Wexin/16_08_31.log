@@ -1,0 +1,194 @@
+[ 2016-08-31T01:50:37+08:00 ] 103.207.230.103 /weixin.php
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000018s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000185s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000151s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000214s ]
+ERR: 无法加载控制器:Index
+
+[ 2016-08-31T01:58:22+08:00 ] 103.207.230.103 /weixin.php
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000017s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000185s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000146s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000210s ]
+ERR: 无法加载控制器:Index
+
+[ 2016-08-31T01:59:17+08:00 ] 103.207.230.103 /weixin.php
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000017s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000111s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000081s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000141s ]
+ERR: 无法加载控制器:Index
+
+[ 2016-08-31T01:59:19+08:00 ] 103.207.230.103 /weixin.php
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000016s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000109s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000083s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000141s ]
+ERR: 无法加载控制器:Index
+
+[ 2016-08-31T02:00:28+08:00 ] 103.207.230.103 /weixin.php
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000018s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000184s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000145s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000206s ]
+
+[ 2016-08-31T02:01:58+08:00 ] 103.207.230.103 /weixin.php
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000014s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000115s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000080s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000127s ]
+ERR: 无法加载控制器:Index
+
+[ 2016-08-31T02:02:03+08:00 ] 103.207.230.103 /weixin.php
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000016s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000108s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000080s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000139s ]
+ERR: 无法加载控制器:Index
+
+[ 2016-08-31T02:04:49+08:00 ] 103.207.230.103 /weixin.php
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000018s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000187s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000147s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000208s ]
+ERR: 无法加载控制器:Index
+
+[ 2016-08-31T02:04:50+08:00 ] 103.207.230.103 /weixin.php
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000016s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000108s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000079s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000137s ]
+ERR: 无法加载控制器:Index
+
+[ 2016-08-31T03:13:34+08:00 ] 58.247.206.148 /weixin.php?signature=80126bfed6df1b92d43251d8f01889ad4688a042&echostr=3320485110273661924&timestamp=1472584420&nonce=1186245962
+ERR: 非法操作:index
+
+[ 2016-08-31T03:13:40+08:00 ] 58.247.206.148 /weixin.php?signature=7ee3de704ed63e34077c21f0625e76a34cf680a9&echostr=1440026570738491135&timestamp=1472584426&nonce=650191194
+ERR: 非法操作:index
+
+[ 2016-08-31T03:13:45+08:00 ] 101.226.103.60 /weixin.php?signature=b6e2e8c323612e3f1055f4beb527ec6cc4ed972d&echostr=7204405210803862254&timestamp=1472584430&nonce=690050673
+ERR: 非法操作:index
+
+[ 2016-08-31T03:13:50+08:00 ] 103.207.230.103 /weixin.php
+ERR: 非法操作:index
+
+[ 2016-08-31T03:13:56+08:00 ] 58.247.206.158 /weixin.php?signature=9f5777840ca1b8839751473a7e7b042d445c8637&echostr=8822210423458487291&timestamp=1472584442&nonce=688445943
+ERR: 非法操作:index
+
+[ 2016-08-31T03:14:00+08:00 ] 58.247.206.140 /weixin.php?signature=3c462a0783f6b3fe6f662983379dcfcc242016cc&echostr=5370380628929272573&timestamp=1472584445&nonce=1768565433
+ERR: 非法操作:index
+
+[ 2016-08-31T03:14:03+08:00 ] 103.207.230.103 /weixin.php
+ERR: 非法操作:index
+
+[ 2016-08-31T03:14:06+08:00 ] 103.207.230.103 /weixin.php
+ERR: 非法操作:index
+
+[ 2016-08-31T03:14:26+08:00 ] 103.207.230.103 /weixin.php
+ERR: 非法操作:index
+
+[ 2016-08-31T03:14:27+08:00 ] 103.207.230.103 /weixin.php
+ERR: 非法操作:index
+
+[ 2016-08-31T03:14:28+08:00 ] 103.207.230.103 /weixin.php
+ERR: 非法操作:index
+
+[ 2016-08-31T03:14:45+08:00 ] 103.207.230.103 /weixin.php
+ERR: 非法操作:index
+
+[ 2016-08-31T03:14:46+08:00 ] 103.207.230.103 /weixin.php
+ERR: 非法操作:index
+
+[ 2016-08-31T03:14:47+08:00 ] 103.207.230.103 /weixin.php
+ERR: 非法操作:index
+
+[ 2016-08-31T03:14:48+08:00 ] 103.207.230.103 /weixin.php
+ERR: 非法操作:index
+
+[ 2016-08-31T03:14:49+08:00 ] 103.207.230.103 /weixin.php
+ERR: 非法操作:index
+
+[ 2016-08-31T03:14:49+08:00 ] 103.207.230.103 /weixin.php
+ERR: 非法操作:index
+
+[ 2016-08-31T03:14:49+08:00 ] 103.207.230.103 /weixin.php
+ERR: 非法操作:index
+
+[ 2016-08-31T03:14:50+08:00 ] 103.207.230.103 /weixin.php
+ERR: 非法操作:index
+
+[ 2016-08-31T03:14:50+08:00 ] 103.207.230.103 /weixin.php
+ERR: 非法操作:index
+
+[ 2016-08-31T03:15:14+08:00 ] 103.207.230.103 /weixin.php
+ERR: 非法操作:index
+
+[ 2016-08-31T03:15:15+08:00 ] 103.207.230.103 /weixin.php
+ERR: 非法操作:index
+
+[ 2016-08-31T03:15:15+08:00 ] 103.207.230.103 /weixin.php
+ERR: 非法操作:index
+
+[ 2016-08-31T03:15:16+08:00 ] 103.207.230.103 /weixin.php
+ERR: 非法操作:index
+
+[ 2016-08-31T03:15:17+08:00 ] 103.207.230.103 /weixin.php
+ERR: 非法操作:index
+
+[ 2016-08-31T03:15:22+08:00 ] 103.207.230.103 /weixin.php/Index/index
+ERR: 非法操作:index
+
+[ 2016-08-31T03:15:29+08:00 ] 103.207.230.103 /weixin.php/Index/index
+ERR: 非法操作:index
+
+[ 2016-08-31T03:15:31+08:00 ] 103.207.230.103 /weixin.php/Index/index
+ERR: 非法操作:index
+
+[ 2016-08-31T03:17:31+08:00 ] 103.207.230.103 /weixin.php/Index/index
+ERR: 无法加载控制器:Index
+
+[ 2016-08-31T03:17:37+08:00 ] 103.207.230.103 /weixin.php/Index/show
+ERR: 无法加载控制器:Index
+
+[ 2016-08-31T03:17:41+08:00 ] 103.207.230.103 /weixin.php/Index/show
+ERR: 无法加载控制器:Index
+
+[ 2016-08-31T03:17:42+08:00 ] 103.207.230.103 /weixin.php/Index/show
+ERR: 无法加载控制器:Index
+
+[ 2016-08-31T03:17:43+08:00 ] 103.207.230.103 /weixin.php/Index/show
+ERR: 无法加载控制器:Index
+
+[ 2016-08-31T03:18:20+08:00 ] 103.207.230.103 /weixin.php/Index/show
+ERR: 无法加载控制器:Index
+
+[ 2016-08-31T03:18:21+08:00 ] 103.207.230.103 /weixin.php/Index/show
+ERR: 无法加载控制器:Index
+
+[ 2016-08-31T03:18:23+08:00 ] 103.207.230.103 /weixin.php/Index/show
+ERR: 无法加载控制器:Index
+
+[ 2016-08-31T03:18:55+08:00 ] 103.207.230.103 /weixin.php
+ERR: 无法加载控制器:Index
+
+[ 2016-08-31T03:19:12+08:00 ] 103.207.230.103 /weixin.php/Index/index
+ERR: 无法加载控制器:Index
+

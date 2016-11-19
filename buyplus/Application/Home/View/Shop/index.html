@@ -1,0 +1,276 @@
+<extend name="Layout/home" />
+
+<block name="title"></block>
+
+<block name="content">
+	<div class="container">
+		<div class="row">
+			<div id="content" class="col-sm-12">
+				<div class="content_top">
+					<div id="slideshow0" class="owl-carousel slideshow">
+						<div class="item">
+							<a href="">
+								<img src="__PUBLIC__/Home/image/banner1.jpg" alt="glasses-banner1" class="img-responsive" />
+							</a>
+						</div>
+						<div class="item">
+							<a href="">
+								<img src="__PUBLIC__/Home/image/banner2.jpg" alt="glasses-banner2" class="img-responsive" />
+							</a>
+						</div>
+					</div>
+
+					<h2 class="widget-title">
+						<span>推荐商品</span>
+					</h2>
+					<div class="row">
+					<volist name="promote_list" id="promote">
+						<div class="product-layout product-grid col-lg-3 col-md-3 col-sm-6 col-xs-12">
+							<div class="product-wrapper">
+								<div class="product-image">
+									<a href="{:U('/goods/'.$promote['goods_id'])}">
+										<img src="__PUBLIC__/Thumb/{$promote['image_thumb']}" alt="{$promote['name']}" title="{$promote['name']}" class="img-responsive" />
+									</a>
+								</div>
+								<div class="product-info">
+									<div class="product-name">
+										<a href="{:U('/goods/'.$promote['goods_id'])}">{$promote['name']}</a>
+									</div>
+									<div class="product-description">
+										<p>..</p>
+									</div>
+									<div class="product-rating">
+
+										<span class="fa fa-stack">
+											<i class="fa fa-star fa-stack-2x"></i>
+										</span>
+									</div>
+
+									<div class="product-price">
+										<span class="price-new">￥{$promote['price']}</span>
+										<if condition="!empty($promote['market_price'])">
+											<span class="price-old">￥{$promote['market_price']}</span>
+										</if>
+									</div>
+									<div class="product-action">
+										<button type="button" class="add-to-cart" data-goods_id="{$promote['goods_id']}">
+											<i class="fa fa-shopping-cart"></i>
+											<span>加入购物车</span>
+										</button>
+										<div class="ps-add-buyincang" id="btn-visible">
+											<button type="button" class="wishlist" onclick="wishlist.add('56');">
+												<i class="fa fa-heart-o"></i>
+												<span>收藏</span>
+											</button>
+											<button type="button" class="compare" onclick="compare.add('56');">
+												<i class="fa fa-bars"></i>
+												<span>对比</span>
+											</button>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</volist>
+					</div>
+					
+					<!-- 特别推荐 -->
+					<ul id="banner0" class="banners">
+						<li class="item">
+							<a href="">
+								<img src="__PUBLIC__/Home/image/hengfu1.jpg" alt="横幅-1" class="img-responsive" />
+							</a>
+						</li>
+					</ul>
+
+					<h2 class="widget-title">
+						<span>最新商品</span>
+					</h2>
+					<div class="row">
+					<volist name="new_list" id="new">
+						<div class="product-layout product-grid col-lg-3 col-md-3 col-sm-6 col-xs-12">
+							<div class="product-wrapper">
+								<div class="product-image">
+									<a href="{:U('/goods/'.$new['goods_id'])}">
+										<img src="__PUBLIC__/Thumb/{$new['image_thumb']}" alt="{$new['name']}" title="{$new['name']}" class="img-responsive" />
+									</a>
+								</div>
+								<div class="product-info">
+									<div class="product-name">
+										<a href="{:U('/goods/'.$new['goods_id'])}">{$new['name']}</a>
+									</div>
+									<div class="product-description">
+										<p>..</p>
+									</div>
+									<div class="product-rating">
+										<span class="fa fa-stack">
+											<i class="fa fa-star fa-stack-2x"></i>
+										</span>
+										<span class="fa fa-stack">
+											<i class="fa fa-star fa-stack-2x"></i>
+										</span>
+										
+									</div>
+									<div class="product-price">
+										<span class="price-new">￥{$new['price']}</span>
+										<if condition="!empty($new['market_price'])">
+											<span class="price-old">￥{$new['market_price']}</span>
+										</if>
+									</div>
+									<div class="product-action">
+										<button type="button" class="add-to-cart" data-goods_id="{$new['goods_id']}">
+											<i class="fa fa-shopping-cart"></i>
+											<span>加入购物车</span>
+										</button>
+										<div class="ps-add-buyincang" id="btn-visible">
+											<button type="button" class="wishlist" onclick="wishlist.add('80');">
+												<i class="fa fa-heart-o"></i>
+												<span>收藏</span>
+											</button>
+											<button type="button" class="compare" onclick="compare.add('80');">
+												<i class="fa fa-bars"></i>
+												<span>对比</span>
+											</button>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</volist>
+					</div>
+
+					<ul id="banner1" class="banners">
+						<li class="item">
+							<a href="">
+								<img src="__PUBLIC__/Home/image/hengfu2.jpg" alt="横幅2" class="img-responsive" />
+							</a>
+						</li>
+					</ul>
+		<!-- 			<h2 class="widget-title">
+						<span>特价商品</span>
+					</h2>
+					<div class="row">
+						<div class="product-layout product-grid col-lg-3 col-md-3 col-sm-6 col-xs-12">
+							<div class="product-wrapper">
+								<div class="product-image">
+									<a href="">
+										<img src="image/cache/catalog/gd/product/yanjing4-300x340.jpg" alt="2016时尚墨镜 女士偏光太阳镜潮人欧美复古圆框眼镜驾驶镜" title="2016时尚墨镜 女士偏光太阳镜潮人欧美复古圆框眼镜驾驶镜" class="img-responsive" />
+									</a>
+								</div>
+								<div class="product-info">
+									<div class="product-name">
+										<a href="">2016时尚墨镜 女士偏光太阳镜潮人欧美复古圆框眼镜驾驶镜</a>
+									</div>
+									<div class="product-description">
+										<p>..</p>
+									</div>
+									<div class="product-rating">
+										<span class="fa fa-stack">
+											<i class="fa fa-star fa-stack-2x"></i>
+										</span>
+										<span class="fa fa-stack">
+											<i class="fa fa-star fa-stack-2x"></i>
+										</span>
+										<span class="fa fa-stack">
+											<i class="fa fa-star fa-stack-2x"></i>
+										</span>
+										<span class="fa fa-stack">
+											<i class="fa fa-star fa-stack-2x"></i>
+										</span>
+										<span class="fa fa-stack">
+											<i class="fa fa-star fa-stack-2x"></i>
+										</span>
+									</div>
+									<div class="product-price">
+										<span class="price-new">￥7,770.00</span>
+										<span class="price-old">￥8,867.00</span>
+									</div>
+									<div class="product-action">
+										<button type="button" class="add-to-cart" onclick="cart.add('71');">
+											<i class="fa fa-shopping-cart"></i>
+											<span>加入购物车</span>
+										</button>
+										<div class="ps-add-buyincang" id="btn-visible">
+											<button type="button" class="wishlist" onclick="wishlist.add('71');">
+												<i class="fa fa-heart-o"></i>
+												<span>收藏</span>
+											</button>
+											<button type="button" class="compare" onclick="compare.add('71');">
+												<i class="fa fa-bars"></i>
+												<span>对比</span>
+											</button>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div> -->
+					<div class="clear"></div>
+				</div>
+			</div>
+		</div>
+	</div>
+</block>
+
+<block name="stylesheet">
+	<link href="__PUBLIC__/Home/owl-carousel/owl.carousel.css" rel="stylesheet" type="text/css" />
+</block>
+
+<block name="bottomJS">
+
+<script type="text/javascript" src="__PUBLIC__/Home/owl-carousel/owl.carousel.min.js"></script>
+
+<script type="text/javascript">
+	$(document).ready(function() {
+	  $('#slideshow0').owlCarousel({
+	    items: 1, //显示数量
+	    loop: true, //循环滚动
+	    autoplay: true, //自动播放
+	    autoplayTimeout: 3000, //自动切换时间（毫秒）
+	    autoplayHoverPause: true, //鼠标移动到图片上面时，是否暂停自动播放
+	    autoplaySpeed: 300, //自动播放图片切换动画时长
+	    navSpeed: 400, //左右切换按钮图片切换动画时长
+	    dotsSpeed: 300, //点击图片下方黑点图片切换动画时长
+	    nav: true, //是否显示左右切换按钮
+	    navText: ['<i class="fa fa-angle-left"></i>', '<i class="fa fa-angle-right"></i>'], //左右切换按钮图标
+	    dots: true, //是否显示图片下方黑点
+	  });
+	});
+</script>
+
+<script>
+$('.add-to-cart').click(function(evt) {
+	var btnAddCart = $(this);
+	var goods_id = btnAddCart.data('goods_id');
+	// 判断商品是否具有选项
+	var url = '{:U('/cartAjax')}';
+	var data = {
+		type: 'hasOption',
+		goods_id: goods_id,
+	};
+	$.get(url, data, function(response){
+		if(response.result == 'yes') {
+			// 有选项
+			location.href = response.url;
+		} else {
+			// 没有选项, 直接加入购物车
+			var url = '{:U('/addCart')}';
+			var data = {
+				goods_id: goods_id,
+				quantity: '1',
+			};
+			$.post(url, data, function(response) {
+				if(response.error == 0) {
+					alert('商品加入购物车成功');
+					// 更新迷你购物车
+					refreshMiniCart();
+				}
+			}, 'json');
+		}
+	}, 'json');
+		
+	// 进入商品详情页 或 加入购物车
+});
+
+</script>
+</block>

@@ -1,0 +1,27 @@
+.boardone{
+	/*border:1px solid red;*/
+	width: 520px;
+	position: relative;
+	margin-top:30px;
+	padding: 10px 100px 10px 30px;
+	word-spacing: 10px;
+	letter-spacing: 3px;
+	text-indent: 20px;
+}
+.boardone>p{
+	line-height: 24px;
+}
+.boardone .spanone{
+	display: inline-block;
+	position: absolute;
+	right:10px;top: 5px;
+	font-size: 28px;
+}
+.boardone .spantwo{
+	font-style: italic;
+	font-size: 16px;
+	display: inline-block;
+	position: absolute; 
+	right:10px;
+	bottom: 10px;
+}

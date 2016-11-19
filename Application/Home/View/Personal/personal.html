@@ -1,0 +1,28 @@
+<include file="common/gusthead" />
+<article class="blogs">
+<h1 class="t_nav"><span>既然来了，那么就留下你的足迹吧！</span>
+<a href="{:U('/personal')}" class="n1">DataCenter</a>
+<a href="{:U('/percomile')}" class="n2">Compile</a></h1>
+
+<div class="bloglist left">
+	<div class="personal">
+		<ul>
+			<li><span>email：</span>{:session('user')['email']}   &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <a href="{:U('/deluser')}">注销</a></li>
+			<li><span>昵称：</span>{$personallist['nickname']}</li>
+			<li><span>签名：</span>{$personallist['autograph']}</li>
+			<li><span>性别 ：</span>
+				<if condition="$personallist['gender'] eq 1">
+					男
+				<else />
+					女
+				</if>
+			</li>
+			<li><span>生日：</span>{$personallist['birthday']}</li>
+			<li><span>所在地：</span>{$personallist['localtion']}</li>
+			<li><span>手机：</span>{$personallist['phone']}</li>
+		</ul>
+	</div>	
+</div>
+<include file="common/right" />
+</article>
+<include file="common/footer" />

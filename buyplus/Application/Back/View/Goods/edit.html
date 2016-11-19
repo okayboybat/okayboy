@@ -1,0 +1,287 @@
+<extend name="Layout/back" />
+
+<block name="title">商品编辑</block>
+
+<block name="content">
+
+	<div id="content">
+		<div class="page-header">
+			<div class="container-fluid">
+				<div class="pull-right">
+					<button type="submit" form="form-edit" data-toggle="tooltip" title="保存" class="btn btn-primary"> <i class="fa fa-save"></i>
+					</button>
+					<a href="{:U('list')}" data-toggle="tooltip" title="取消" class="btn btn-default"> <i class="fa fa-reply"></i>
+					</a>
+				</div>
+				<h1>商品</h1>
+				<ul class="breadcrumb">
+					<li>
+						<a href="{:U('Manage/index')}">首页</a>
+					</li>
+					<li>
+						<a href="{:U('list')}">商品</a>
+					</li>
+				</ul>
+			</div>
+		</div>
+		<div class="container-fluid">
+			<div class="panel panel-default">
+				<div class="panel-heading">
+					<h3 class="panel-title">
+						<i class="fa fa-pencil"></i>
+						编辑商品
+					</h3>
+				</div>
+				<div class="panel-body">
+					<form action="{:U('edit')}" method="post" enctype="multipart/form-data" id="form-edit" class="form-horizontal">
+					<input type="hidden" name="goods_id" value="{$row['goods_id']}">
+						<ul class="nav nav-tabs">
+							<li class="active">
+								<a href="#tab-general" data-toggle="tab">基本信息</a>
+							</li>
+						</ul>
+						<div class="tab-content">
+							<div class="tab-pane active" id="tab-general">
+
+																
+								<div class="form-group">
+									<label class="col-sm-2 control-label" for="input-name">name</label>
+									<div class="col-sm-10">
+										<input type="text" name="name" value="{$row['name']}" placeholder="name" id="input-name" class="form-control" />
+									</div>
+								</div>
+								
+								<div class="form-group">
+									<label class="col-sm-2 control-label" for="input-image">image</label>
+									<div class="col-sm-10">
+										<input type="text" name="image" value="{$row['image']}" placeholder="image" id="input-image" class="form-control" />
+									</div>
+								</div>
+								
+								<div class="form-group">
+									<label class="col-sm-2 control-label" for="input-image_thumb">image_thumb</label>
+									<div class="col-sm-10">
+										<input type="text" name="image_thumb" value="{$row['image_thumb']}" placeholder="image_thumb" id="input-image_thumb" class="form-control" />
+									</div>
+								</div>
+								
+								<div class="form-group">
+									<label class="col-sm-2 control-label" for="input-SKU">SKU</label>
+									<div class="col-sm-10">
+										<input type="text" name="SKU" value="{$row['SKU']}" placeholder="SKU" id="input-SKU" class="form-control" />
+									</div>
+								</div>
+								
+								<div class="form-group">
+									<label class="col-sm-2 control-label" for="input-UPC">UPC</label>
+									<div class="col-sm-10">
+										<input type="text" name="UPC" value="{$row['UPC']}" placeholder="UPC" id="input-UPC" class="form-control" />
+									</div>
+								</div>
+								
+								<div class="form-group">
+									<label class="col-sm-2 control-label" for="input-price">price</label>
+									<div class="col-sm-10">
+										<input type="text" name="price" value="{$row['price']}" placeholder="price" id="input-price" class="form-control" />
+									</div>
+								</div>
+								
+								<div class="form-group">
+									<label class="col-sm-2 control-label" for="input-market_price">market_price</label>
+									<div class="col-sm-10">
+										<input type="text" name="market_price" value="{$row['market_price']}" placeholder="market_price" id="input-market_price" class="form-control" />
+									</div>
+								</div>
+								
+								<div class="form-group">
+									<label class="col-sm-2 control-label" for="input-quantity">quantity</label>
+									<div class="col-sm-10">
+										<input type="text" name="quantity" value="{$row['quantity']}" placeholder="quantity" id="input-quantity" class="form-control" />
+									</div>
+								</div>
+								
+								<div class="form-group">
+									<label class="col-sm-2 control-label" for="input-minimum">minimum</label>
+									<div class="col-sm-10">
+										<input type="text" name="minimum" value="{$row['minimum']}" placeholder="minimum" id="input-minimum" class="form-control" />
+									</div>
+								</div>
+								
+								<div class="form-group">
+									<label class="col-sm-2 control-label" for="input-is_subtract">is_subtract</label>
+									<div class="col-sm-10">
+										<input type="text" name="is_subtract" value="{$row['is_subtract']}" placeholder="is_subtract" id="input-is_subtract" class="form-control" />
+									</div>
+								</div>
+								
+								<div class="form-group">
+									<label class="col-sm-2 control-label" for="input-is_shipping">is_shipping</label>
+									<div class="col-sm-10">
+										<input type="text" name="is_shipping" value="{$row['is_shipping']}" placeholder="is_shipping" id="input-is_shipping" class="form-control" />
+									</div>
+								</div>
+								
+								<div class="form-group">
+									<label class="col-sm-2 control-label" for="input-date_available">date_available</label>
+									<div class="col-sm-10">
+										<input type="text" name="date_available" value="{$row['date_available']}" placeholder="date_available" id="input-date_available" class="form-control" />
+									</div>
+								</div>
+								
+								<div class="form-group">
+									<label class="col-sm-2 control-label" for="input-length">length</label>
+									<div class="col-sm-10">
+										<input type="text" name="length" value="{$row['length']}" placeholder="length" id="input-length" class="form-control" />
+									</div>
+								</div>
+								
+								<div class="form-group">
+									<label class="col-sm-2 control-label" for="input-width">width</label>
+									<div class="col-sm-10">
+										<input type="text" name="width" value="{$row['width']}" placeholder="width" id="input-width" class="form-control" />
+									</div>
+								</div>
+								
+								<div class="form-group">
+									<label class="col-sm-2 control-label" for="input-height">height</label>
+									<div class="col-sm-10">
+										<input type="text" name="height" value="{$row['height']}" placeholder="height" id="input-height" class="form-control" />
+									</div>
+								</div>
+								
+								<div class="form-group">
+									<label class="col-sm-2 control-label" for="input-weight">weight</label>
+									<div class="col-sm-10">
+										<input type="text" name="weight" value="{$row['weight']}" placeholder="weight" id="input-weight" class="form-control" />
+									</div>
+								</div>
+								
+								<div class="form-group">
+									<label class="col-sm-2 control-label" for="input-description">description</label>
+									<div class="col-sm-10">
+										<input type="text" name="description" value="{$row['description']}" placeholder="description" id="input-description" class="form-control" />
+									</div>
+								</div>
+								
+								<div class="form-group">
+									<label class="col-sm-2 control-label" for="input-is_status">is_status</label>
+									<div class="col-sm-10">
+										<input type="text" name="is_status" value="{$row['is_status']}" placeholder="is_status" id="input-is_status" class="form-control" />
+									</div>
+								</div>
+								
+								<div class="form-group">
+									<label class="col-sm-2 control-label" for="input-is_deleted">is_deleted</label>
+									<div class="col-sm-10">
+										<input type="text" name="is_deleted" value="{$row['is_deleted']}" placeholder="is_deleted" id="input-is_deleted" class="form-control" />
+									</div>
+								</div>
+								
+								<div class="form-group">
+									<label class="col-sm-2 control-label" for="input-is_new">is_new</label>
+									<div class="col-sm-10">
+										<input type="text" name="is_new" value="{$row['is_new']}" placeholder="is_new" id="input-is_new" class="form-control" />
+									</div>
+								</div>
+								
+								<div class="form-group">
+									<label class="col-sm-2 control-label" for="input-is_promote">is_promote</label>
+									<div class="col-sm-10">
+										<input type="text" name="is_promote" value="{$row['is_promote']}" placeholder="is_promote" id="input-is_promote" class="form-control" />
+									</div>
+								</div>
+								
+								<div class="form-group">
+									<label class="col-sm-2 control-label" for="input-sort_number">sort_number</label>
+									<div class="col-sm-10">
+										<input type="text" name="sort_number" value="{$row['sort_number']}" placeholder="sort_number" id="input-sort_number" class="form-control" />
+									</div>
+								</div>
+								
+								<div class="form-group">
+									<label class="col-sm-2 control-label" for="input-tax_id">tax_id</label>
+									<div class="col-sm-10">
+										<input type="text" name="tax_id" value="{$row['tax_id']}" placeholder="tax_id" id="input-tax_id" class="form-control" />
+									</div>
+								</div>
+								
+								<div class="form-group">
+									<label class="col-sm-2 control-label" for="input-brand_id">brand_id</label>
+									<div class="col-sm-10">
+										<input type="text" name="brand_id" value="{$row['brand_id']}" placeholder="brand_id" id="input-brand_id" class="form-control" />
+									</div>
+								</div>
+								
+								<div class="form-group">
+									<label class="col-sm-2 control-label" for="input-category_id">category_id</label>
+									<div class="col-sm-10">
+										<input type="text" name="category_id" value="{$row['category_id']}" placeholder="category_id" id="input-category_id" class="form-control" />
+									</div>
+								</div>
+								
+								<div class="form-group">
+									<label class="col-sm-2 control-label" for="input-length_unit_id">length_unit_id</label>
+									<div class="col-sm-10">
+										<input type="text" name="length_unit_id" value="{$row['length_unit_id']}" placeholder="length_unit_id" id="input-length_unit_id" class="form-control" />
+									</div>
+								</div>
+								
+								<div class="form-group">
+									<label class="col-sm-2 control-label" for="input-weight_unit_id">weight_unit_id</label>
+									<div class="col-sm-10">
+										<input type="text" name="weight_unit_id" value="{$row['weight_unit_id']}" placeholder="weight_unit_id" id="input-weight_unit_id" class="form-control" />
+									</div>
+								</div>
+								
+								<div class="form-group">
+									<label class="col-sm-2 control-label" for="input-stock_status_id">stock_status_id</label>
+									<div class="col-sm-10">
+										<input type="text" name="stock_status_id" value="{$row['stock_status_id']}" placeholder="stock_status_id" id="input-stock_status_id" class="form-control" />
+									</div>
+								</div>
+								
+								<div class="form-group">
+									<label class="col-sm-2 control-label" for="input-meta_title">meta_title</label>
+									<div class="col-sm-10">
+										<input type="text" name="meta_title" value="{$row['meta_title']}" placeholder="meta_title" id="input-meta_title" class="form-control" />
+									</div>
+								</div>
+								
+								<div class="form-group">
+									<label class="col-sm-2 control-label" for="input-meta_keywords">meta_keywords</label>
+									<div class="col-sm-10">
+										<input type="text" name="meta_keywords" value="{$row['meta_keywords']}" placeholder="meta_keywords" id="input-meta_keywords" class="form-control" />
+									</div>
+								</div>
+								
+								<div class="form-group">
+									<label class="col-sm-2 control-label" for="input-meta_description">meta_description</label>
+									<div class="col-sm-10">
+										<input type="text" name="meta_description" value="{$row['meta_description']}" placeholder="meta_description" id="input-meta_description" class="form-control" />
+									</div>
+								</div>
+								
+								<div class="form-group">
+									<label class="col-sm-2 control-label" for="input-create_at">create_at</label>
+									<div class="col-sm-10">
+										<input type="text" name="create_at" value="{$row['create_at']}" placeholder="create_at" id="input-create_at" class="form-control" />
+									</div>
+								</div>
+								
+								<div class="form-group">
+									<label class="col-sm-2 control-label" for="input-update_at">update_at</label>
+									<div class="col-sm-10">
+										<input type="text" name="update_at" value="{$row['update_at']}" placeholder="update_at" id="input-update_at" class="form-control" />
+									</div>
+								</div>
+
+
+							</div>
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+
+</block>

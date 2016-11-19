@@ -1,0 +1,12 @@
+#判断是否开启mod_rewrite.c模块
+<IfModule mod_rewrite.c>
+#如果开启了开模块
+#增加目录选项，允许符号连接，解决403权限问题
+  Options +FollowSymlinks
+  RewriteEngine On
+#重写条件是：请求的资源不是目录以及文件
+  RewriteCond %{REQUEST_FILENAME} !-d
+  RewriteCond %{REQUEST_FILENAME} !-f
+ #重新定制规则：将所有的请求放在index.php之后，达到隐藏index.php的效果
+  RewriteRule ^(.*)$ index.php/$1 [QSA,PT,L]
+</IfModule>

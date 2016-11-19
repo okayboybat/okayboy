@@ -1,0 +1,121 @@
+<extend name="Layout/back" />
+
+<block name="title">配置系统</block>
+
+<block name="content">
+  <div id="content">
+    <div class="page-header">
+      <div class="container-fluid">
+        <div class="pull-right">
+          <button type="submit" form="form-setting" data-toggle="tooltip" title="保存" class="btn btn-primary"> <i class="fa fa-save"></i>
+          </button>
+          <a href="admin/index.php?route=setting/store&amp;token=zCrO5UG5Gxye6F4HUqxXNq8XTDXACUU5" data-toggle="tooltip" title="取消" class="btn btn-default"> <i class="fa fa-reply"></i>
+          </a>
+        </div>
+        <h1>系统设置</h1>
+        <ul class="breadcrumb">
+          <li>
+            <a href="admin/index.php?route=common/dashboard&amp;token=zCrO5UG5Gxye6F4HUqxXNq8XTDXACUU5">首页</a>
+          </li>
+          <li>
+            <a href="admin/index.php?route=setting/store&amp;token=zCrO5UG5Gxye6F4HUqxXNq8XTDXACUU5">商店</a>
+          </li>
+          <li>
+            <a href="admin/index.php?route=setting/setting&amp;token=zCrO5UG5Gxye6F4HUqxXNq8XTDXACUU5">系统设置</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="container-fluid">
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <h3 class="panel-title">
+            <i class="fa fa-pencil"></i>
+            编辑系统设置
+          </h3>
+        </div>
+        <div class="panel-body">
+          <form action="{:U('settingUpdate')}" method="post" enctype="multipart/form-data" id="form-setting" class="form-horizontal">
+            <ul class="nav nav-tabs">
+              <volist name="group_list" id="group">
+
+                <if condition="$i eq 1">
+                  <li class="active">
+                    <else/>
+                    <li></if>
+                    <a href="#tab-{$group['setting_group_id']}" data-toggle="tab">{$group['group_title']}</a>
+                  </li>
+                </volist>
+              </ul>
+
+              <div class="tab-content">
+                <volist name="setting_group" id="group_item">
+
+                  <if condition="$i eq 1">
+                    <div class="tab-pane active" id="tab-{$key}">
+                      <else/>
+                      <div class="tab-pane" id="tab-{$key}"></if>
+
+                      <volist name="group_item" id="setting_item">
+                        <div class="form-group">
+                          <label class="col-sm-2 control-label" for="input-{$setting_item['key']}">{$setting_item['title']}</label>
+
+                          <div class="col-sm-10">
+
+                            <if condition="$setting_item['type_title'] eq 'text'">
+                              <input type="text" name="setting[{$setting_item['setting_id']}]" value="{$setting_item['value']}" placeholder="{$setting_item['title']}" id="input-{$setting_item['key']}" class="form-control" />
+
+                              <elseif condition="$setting_item['type_title'] eq 'textarea'" />
+                              <textarea name="setting[{$setting_item['setting_id']}]" rows="5" placeholder="{$setting_item['title']}" id="input-{$setting_item['key']}" class="form-control">{$setting_item['value']}</textarea>
+
+                              <elseif condition="$setting_item['type_title'] eq 'select'" />
+                              <select name="setting[{$setting_item['setting_id']}]" id="input-{$setting_item['key']}" class="form-control">
+
+                                <volist name="setting_item['option']" id="option">
+                                  <option 
+                        <if condition="$setting_item['value'] eq $option['setting_option_id']">selected</if>
+                                  value="{$option['setting_option_id']}">{$option['option_title']}
+                                </option>
+                              </volist>
+
+                            </select>
+                            <elseif condition="$setting_item['type_title'] eq 'checkbox'" />
+
+                            <div class="col-sm-2">
+                              <label>
+                                <input type="checkbox" name="remove[]" value="{$setting_item['setting_id']}">全部取消</label>
+                            </div>
+                            <div class="col-sm-10">
+
+                              <div class="well well-sm" style="height: 150px; overflow: auto;">
+                                <volist name="setting_item['option']" id="option">
+                                  <div class="checkbox">
+                                    <label>
+                                      <input 
+                              <if condition="in_array($option['setting_option_id'], $setting_item['value_list'])">checked</if>
+                                    name="setting[{$setting_item['setting_id']}][]" value="{$option['setting_option_id']}" type="checkbox">
+                              {$option['option_title']}
+                                  </label>
+                                </div>
+                              </volist>
+                            </div>
+
+                          </div>
+
+                        </if>
+
+                      </div>
+                    </div>
+                  </volist>
+
+                </div>
+              </volist>
+
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</block>

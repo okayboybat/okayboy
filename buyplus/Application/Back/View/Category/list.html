@@ -1,0 +1,198 @@
+<extend name="Layout/back" />
+
+<block name="title">商品分类列表</block>
+
+<block name="content">
+
+	<div id="content">
+		<div class="page-header">
+			<div class="container-fluid">
+				<div class="pull-right">
+					<a href="{:U('add')}" data-toggle="tooltip" title="新增" class="btn btn-primary"> <i class="fa fa-plus"></i>
+					</a>
+					<button type="button" data-toggle="tooltip" title="删除" class="btn btn-danger" id="button-delete"> <i class="fa fa-trash-o"></i>
+					</button>
+				</div>
+				<h1>商品分类管理</h1>
+				<ul class="breadcrumb">
+					<li>
+						<a href="{:U('Manage/index')}">首页</a>
+					</li>
+					<li>
+						<a href="javascript:;">商品分类管理</a>
+					</li>
+				</ul>
+			</div>
+		</div>
+		<div class="container-fluid">
+			<div class="panel panel-default">
+				<div class="panel-heading">
+					<h3 class="panel-title">
+						<i class="fa fa-list"></i>
+						商品分类列表
+					</h3>
+				</div>
+				<div class="panel-body">
+
+					<form action="{:U('multi')}" method="post" enctype="multipart/form-data" id="form-list">
+						<input type="hidden" name="operate" value="" >
+						<div class="table-responsive">
+							<table class="table table-bordered table-hover">
+								<thead>
+									<tr>
+										<td style="width: 1px;" class="text-center">
+											<input type="checkbox" onclick="$('input[name*=\'selected\']').prop('checked', this.checked);" />
+										</td>
+										
+<td class="text-left">
+
+	<a href="#">分类</a>
+</td>
+<!-- 一个字段 -->
+
+<td class="text-left">
+	<a href="#">排序</a>
+</td>
+<!-- 一个字段 -->
+
+
+<td class="text-left">
+	<a href="#">图像</a>
+</td>
+<!-- 一个字段 -->
+
+
+<td class="text-left">
+	<a href="#">是否启用</a>
+</td>
+<!-- 一个字段 -->
+
+
+<td class="text-left">
+	<a href="#">是否显示在导航栏</a>
+</td>
+<!-- 一个字段 -->
+
+
+<!-- 一个字段 -->
+
+
+										<td class="text-right">管理</td>
+									</tr>
+								</thead>
+								<tbody>
+
+									<volist name="list" id="row">
+
+									<tr 
+										data-deep="{$row['deep']}"
+										data-status="close"
+										<if condition="$row['deep'] gt 0">style="display: none;"</if>
+									>
+										<td class="text-center">
+											<input type="checkbox" name="selected[]" value="{$row['category_id']}" />
+										</td>
+										
+<!-- 一个字段的数据 -->
+<td class="text-left category-title">
+{:str_repeat('&nbsp;', $row['deep']*6)}
+{$row['title']}
+</td>
+
+<!-- 一个字段的数据 -->
+<td class="text-left">{$row['sort_number']}</td>
+
+<!-- 一个字段的数据 -->
+<td class="text-left">
+<img style="max-height: 30px;" alt="图像不在" src="__PUBLIC__/Thumb/{$row['image_thumb']}" >
+</td>
+
+<!-- 一个字段的数据 -->
+<td class="text-left">{$row['is_used']}</td>
+
+<!-- 一个字段的数据 -->
+<td class="text-left">{$row['is_nav']}</td>
+
+
+										<td class="text-right">
+											<a href="{:U('edit', ['category_id'=>$row['category_id']])}" data-toggle="tooltip" title="编辑" class="btn btn-primary">
+												<i class="fa fa-pencil"></i>
+											</a>
+										</td>
+									</tr>
+								</volist>
+
+							</tbody>
+						</table>
+					</div>
+				</form>
+				<div class="row">
+
+					{$page_html}
+
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+</block>
+
+
+<block name="bottomJS">
+
+<script>
+$('#button-delete').click(function(){
+	var result = confirm('确认删除?');
+
+	// 如果确认, 则设置operate, 提交表单
+	if (result) {
+		$('input[name=operate]:eq(0)').val('delete'); 
+		$('#form-list').submit();
+	}
+	
+	// 返回confirm的结果
+	return result;
+}); 
+
+
+$('.category-title').click(function(){
+
+	// 记录当前的tr, 以及tr的deep, 当前状态(展开还是合并)
+	var currTr = $(this).parent();
+	var currDeep = currTr.data('deep');
+	var currStatus = currTr.data('status');
+	// console.log(currTr, currDeep, currStatus);
+	
+	// 找当前tr下所有的tr, 找到deep值大
+	currTr.nextAll('tr').each(function(i){
+
+		// 如果某个tr的deep值, 小于等于当前的tr的deep 遍历结束returnfalse
+		if ($(this).data('deep') <= currDeep) {
+			return false;
+		}
+
+		// 需要操作
+		if (currStatus == 'close') {
+			// 需要展示, 记录状态为open
+			$(this).show().data('status', 'open');
+			// 
+		} else {
+			$(this).hide().data('status', 'close');
+		}
+	}); 
+
+	// 当前的tr的状态修改
+	if (currStatus == 'close') {
+		// 需要展示, 记录状态为open
+		currTr.data('status', 'open');
+		// 
+	} else {
+		currTr.data('status', 'close');
+	}
+	
+});
+
+</script>
+
+</block>

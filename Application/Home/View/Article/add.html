@@ -1,0 +1,52 @@
+<include file="common/head" />	
+		
+<article class="blogs">
+<h1 class="t_nav"><span>写下看见的！</span>
+		<a href="{:U('/articleList')}" class="n2">List</a>
+		<a href="{:U('/articleAdd')}" class="n1">News</a>
+</h1>
+<section id="editor">
+   	<div id='edit' style="margin-top: 30px;">
+      <form class="two" action="{:U('/ArticleAdd')}" method="post">
+        <input type="hidden" value="{:session('user')['user_id']}" name="user_id">
+      	<ul>
+        	<li style="font-size:30px">发布文章</li>
+     		<li><input placeholder="标题" type="text" name="title" style="width:80%;height:30px"><select style="height:30px;width:18%" name="cate_id">
+		     					<option value='1'>默认分类</option>
+		     					<volist name="list" id="row">
+		     						<option value="{$row['cate_id']}">{$row['cate_title']}</option>
+		     					</volist>
+     				</select></li>
+     		<li><textarea placeholder="文章内容" class="editor" id="edit" name="content"></textarea></li>
+     		<li><input type="submit" value="确认发布" style="width:20%;height:50px;"></li>
+		</ul>  
+    </div>
+</section>
+
+</article>
+
+<script src="__PUBLIC__/Test/js/libs/jquery-1.11.1.min.js"></script> 
+<script src="__PUBLIC__/Test/js/froala_editor.min.js"></script> 
+<!--[if lt IE 9]>
+    <script src="__PUBLIC__/Test/js/froala_editor_ie8.min.js"></script>
+<![endif]--> 
+<script src="__PUBLIC__/Test/js/plugins/tables.min.js"></script> 
+<script src="__PUBLIC__/Test/js/plugins/lists.min.js"></script> 
+<script src="__PUBLIC__/Test/js/plugins/colors.min.js"></script> 
+<script src="__PUBLIC__/Test/js/plugins/media_manager.min.js"></script> 
+<script src="__PUBLIC__/Test/js/plugins/font_family.min.js"></script> 
+<script src="__PUBLIC__/Test/js/plugins/font_size.min.js"></script> 
+<script src="__PUBLIC__/Test/js/plugins/block_styles.min.js"></script> 
+<script src="__PUBLIC__/Test/js/plugins/video.min.js"></script> 
+<script src="__PUBLIC__/Test/js/langs/zh_cn.js"></script>
+
+ <script>
+   $(function() {
+       $('.editor').editable({
+           inlineMode: false,
+           theme: 'gray',
+           //模版
+           height: '200px' ,//高度
+     });
+  })
+</script>	

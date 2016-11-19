@@ -1,0 +1,26 @@
+     				安装的 是 2.9.0 版本
+
+0. 挂载 光盘
+
+mkdir CentOS   mount /media/CentOS
+
+1. 安装所需依赖
+yum --disablerepo=\* --enablerepo=c6-media install perl gcc gcc-c++ curl-devel expat-devel gettext-devel openssl-devel perl-devel zlib-devel
+
+2. 解压  git 压缩包 获取源码
+tar zxvf git-2.9.0.tar.gz
+
+3. git 的源码 没有自动 提供 configure 。。需要自己去生成
+make configure
+
+4. 开始配置
+./configure --prefix=/usr/local/git
+
+5. make && make install
+正常的话 ，应该安装完成
+
+6. 加入到 环境变量
+vi /etc/profile
+在最下面加入 代码
+export PATH="$PATH:/usr/local/git/bin"
+注： 根据自己的git 安装位置 加环境变量

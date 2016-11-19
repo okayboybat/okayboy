@@ -1,0 +1,37 @@
+
+<include file="common/head" />
+<article class="blogs">
+<h1 class="t_nav"><span>既然来了，那么就留下你的足迹吧！</span>
+<a href="{:U('/personal')}" class="n2">DataCenter</a>
+<a href="{:U('/percomile')}" class="n1">Compile</a></h1>
+
+<div class="bloglist left">
+	<div class="personal">
+		<ul>
+		<form action="{:U('/percomile')}" method="post">
+		<input type="hidden" name="personal_id" value="{$perlist['personal_id']}">
+			<li><span>email：</span>{:session('user')['email']}</li>
+			<li><span>昵称：</span><input type="text" required name="nickname" value="{$perlist['nickname']}"></li>
+			<li><span>签名：</span>
+				<textarea class="textar" name="autograph">{$perlist['autograph']}</textarea></li>
+			<li><span>性别 ：</span>
+			<if condition="$perlist['gender'] eq 1">
+					<input type="radio" name="gender" value="1" checked>男
+					<input type="radio" name="gender" value="0">女
+				<else />
+					<input type="radio" name="gender" value="1">男
+					<input type="radio" name="gender" value="0" checked>女
+				</if>
+			</li>
+			<li><span>生日：</span><input type="datetime-local" name="birthday" value="{$perlist['birthday']}"></li>
+			<li><span>所在地：</span><input type="text" name="localtion" value="{$perlist['localtion']}"></li>
+			<li><span>手机：</span><input type="text" name="phone" value="{$perlist['phone']}"></li>
+			<li><input type="submit" value="Save" class="perbtn"></li>
+			</form>
+		</ul>
+	</div>	
+</div>
+
+<include file="common/right" />
+</article>
+<include file="common/footer" />

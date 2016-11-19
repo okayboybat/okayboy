@@ -1,0 +1,377 @@
+<extend name="Layout/home" />
+
+<block name="title"></block>
+
+<block name="content">
+
+  <div class="container">
+        <ul class="breadcrumb">
+          <li>
+            <a href="{:U('/index')}">
+              <i class="fa fa-home"></i>
+            </a>
+          </li>
+
+          <li>
+            <a href="#">{$goods['name']}</a>
+          </li>
+        </ul>
+        <div class="row">
+          <div id="content" class="product-detail col-sm-12">
+            <div class="row">
+              <div class="col-sm-5">
+                <!--elevate zoom start-->
+                <div class="elevate-zoom-wrapper">
+                  <div class="elevate-zoom-preview">
+                  	<!-- 默认的显示图像, 第一张图像 -->
+                    <a href="javascript:;">
+                      <img id="elevate-zoom" src="__PUBLIC__/Thumb/{$gallery_list[0]['image_small']}" data-zoom-image="__PUBLIC__/Thumb/{$gallery_list[0]['image_big']}" class="img-responsive">
+                    </a>
+                    <!--  vcxcxcx     -->
+                  </div>
+                  <div id="product-thumbnail-gallery">
+                  <!-- 图像列表 -->
+                  <volist name="gallery_list" id="gallery">
+                    <a data-zoom-image="__PUBLIC__/Thumb/{$gallery['image_big']}" data-image="__PUBLIC__/Thumb/{$gallery['image_small']}" data-upate="" class="elevatezoom-gallery active" href="__PUBLIC__/Thumb/{$gallery['image_big']}">
+                      <img src="__PUBLIC__/Thumb/{$gallery['image_small']}" width="60">
+                    </a>
+	              </volist>
+                  </div>
+                </div>
+                <!--elevate zoom end--> </div>
+              <div class="col-sm-7 product-info">
+              <form action="{:U('/addCart')}" method="post">
+              	<input type="hidden" name="goods_id" value="{$goods['goods_id']}">
+
+                <h1>{$goods['name']}</h1>
+                <ul class="product-brief-wrapper">
+                  <li>
+                    <span>型  号</span>
+                    5342
+                  </li>
+                  <li>
+                    <span>奖励积分</span>
+                    50
+                  </li>
+                  <li>
+                    <span>库存状态</span>
+                    有现货
+                  </li>
+                </ul>
+                <div class="product-price-wrapper">
+                  <span class="price-new">￥{$goods['price']}</span>
+                  <span class="price-old">￥{$goods['market_price']}</span>
+                  <!-- <span>消费积分 100</span> -->
+                </div>
+                <hr>
+                <div id="product">
+                  <h3>选项</h3>
+
+                  <volist name="option_list" id="option">
+                  <div class="form-group required">
+                    <label class="control-label">{$option['title']}</label>
+                    <div id="input-option{$option['goods_attribute_id']}">
+                    <volist name="option['value_list']" id="value">
+					  	
+                      <label class="radio" style="margin-right: 4px;">
+                        <input type="radio" name="option[{$option['goods_attribute_id']}]" value="{$value['goods_attribute_value_id']}" />
+                        <span>{$value['value']}</span>
+                      </label>
+
+	                </volist>
+                    </div>
+                  </div>
+	              </volist>
+
+
+				
+				  <h3>配件</h3>
+                  <div class="form-group required">
+                    <label class="control-label">配件</label>
+                    <div id="input-option233">
+                      <label class="checkbox">
+                        <input type="checkbox" name="option[233][]" value="27" />
+                        <span>配件之一</span>
+                      </label>
+                      <label class="checkbox">
+                        <input type="checkbox" name="option[233][]" value="25" />
+                        <span>配件之二</span>
+                      </label>
+                      <label class="checkbox">
+                        <input type="checkbox" name="option[233][]" value="26" />
+                        <span>配件之三</span>
+                      </label>
+                      <label class="checkbox">
+                        <input type="checkbox" name="option[233][]" value="24" />
+                        <span>配件之四</span>
+                      </label>
+                    </div>
+                  </div>
+                  <hr>
+                  <div class="product-cart-action">
+                    <div class="quantity-input-wrapper">
+                      <input type="text" name="quantity" value="1" placeholder="数量" id="input-quantity" class="form-control" />
+                      <a href="#" class="quantity-up">+</a>
+                      <a href="#" class="quantity-down">-</a>
+                    </div>
+                    <button type="submit" id="button-cart" data-loading-text="正在加载..." class="btn btn-primary">加入购物车</button>
+                    <input type="hidden" name="product_id" value="61" />
+                  </div>
+                </div>
+                <div class="wishlist-share">
+                  <a onclick="wishlist.add('61');">
+                    <i class="fa fa-heart"></i>
+                    收藏
+                  </a>
+                  <a onclick="compare.add('61');">
+                    <i class="fa fa-link"></i>
+                    对比
+                  </a>
+                </div>
+                <div class="rating">
+                  <p>
+                    <span class="fa fa-stack">
+                      <i class="fa fa-star on fa-stack-1x"></i>
+                    </span>
+                    <span class="fa fa-stack">
+                      <i class="fa fa-star on fa-stack-1x"></i>
+                    </span>
+                    <span class="fa fa-stack">
+                      <i class="fa fa-star on fa-stack-1x"></i>
+                    </span>
+                    <span class="fa fa-stack">
+                      <i class="fa fa-star on fa-stack-1x"></i>
+                    </span>
+                    <span class="fa fa-stack">
+                      <i class="fa fa-star off fa-stack-1x"></i>
+                    </span>
+                    <a href="" onclick="$('a[href=\'#tab-review\']').trigger('click'); return false;">0 评价</a>
+                    /
+                    <a href="" onclick="$('a[href=\'#tab-review\']').trigger('click'); return false;">如果您对本商品有什么问题或经验，请在此留下您的意见和建议！</a>
+                  </p>
+                  <hr>
+                  <!-- Baidu Share BEGIN -->
+                  <div class="bdsharebuttonbox">
+                    <a href="#" class="bds_more" data-cmd="more">分享到：</a>
+                    <a href="#" class="bds_qzone" data-cmd="qzone" title="分享到QQ空间">QQ空间</a>
+                    <a href="#" class="bds_tsina" data-cmd="tsina" title="分享到新浪微博">新浪微博</a>
+                    <a href="#" class="bds_tqq" data-cmd="tqq" title="分享到腾讯微博">腾讯微博</a>
+                    <a href="#" class="bds_renren" data-cmd="renren" title="分享到人人网">人人网</a>
+                    <a href="#" class="bds_weixin" data-cmd="weixin" title="分享到微信">微信</a>
+                  </div>
+                  <script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"16"},"share":{"bdSize":16}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
+                  <!-- Baidu Share END --> 
+                </div>
+              </div>
+
+              </form>
+            </div>
+            <ul class="nav nav-tabs">
+              <li class="active">
+                <a href="#tab-description" data-toggle="tab">商品描述</a>
+              </li>
+              <li>
+                <a href="#tab-attribute" data-toggle="tab">商品属性</a>
+              </li>
+              <li>
+                <a href="#tab-review" data-toggle="tab">商品评价 (已有N条评价)</a>
+              </li>
+            </ul>
+            <div class="tab-content">
+              <div class="tab-pane active" id="tab-description">
+                {$goods['description']}
+              </div>
+
+              <div class="tab-pane" id="tab-attribute">
+                <table class="table table-bordered">
+                  <tbody>
+                    
+                  </tbody>
+                </table>
+              </div>
+
+              <div class="tab-pane" id="tab-review">
+                <form class="form-horizontal" id="form-review">
+                  <div id="review"></div>
+                  <h2>如果您对本商品有什么问题或经验，请在此留下您的意见和建议！</h2>
+                  <div class="form-group required">
+                    <div class="col-sm-12">
+                      <label class="control-label" for="input-name">您的姓名</label>
+                      <input type="text" name="name" value="" id="input-name" class="form-control" />
+                    </div>
+                  </div>
+                  <div class="form-group required">
+                    <div class="col-sm-12">
+                      <label class="control-label" for="input-review">您的评价</label>
+                      <textarea name="text" rows="5" id="input-review" class="form-control"></textarea>
+                      <div class="help-block">
+                        <span class="text-danger">注意</span>
+                        评论内容不支持HTML代码！
+                      </div>
+                    </div>
+                  </div>
+                  <div class="form-group required">
+                    <div class="col-sm-12">
+                      <label class="control-label">顾客评分</label>
+                      &nbsp;&nbsp;&nbsp; 差评&nbsp;
+                      <input type="radio" name="rating" value="1" />
+                      &nbsp;
+                      <input type="radio" name="rating" value="2" />
+                      &nbsp;
+                      <input type="radio" name="rating" value="3" />
+                      &nbsp;
+                      <input type="radio" name="rating" value="4" />
+                      &nbsp;
+                      <input type="radio" name="rating" value="5" />
+                      &nbsp;好评
+                    </div>
+                  </div>
+                  <div class="buttons clearfix">
+                    <div class="pull-right">
+                      <button type="button" id="button-review" data-loading-text="正在加载..." class="btn btn-primary">继续</button>
+                    </div>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+</block>
+<block name="bottomJS">
+<script>
+// 面包屑导航
+var url = '{:U('/goodsAjax')}';
+var data = {
+	'goods_id': {$goods['goods_id']},
+	'type': 'breadcrumb',
+};
+$.get(url, data, function(response){
+		if (response.error == 0) {
+			for(var i=0; i<response.rows.length; ++i) {
+				var category = response.rows[i];
+				liElement = '<li><a href="'+ category.url+'">'+category.title+'</a></li>';
+				$('.breadcrumb>li:last').before(liElement);
+			}
+		}
+}, 'json');
+</script>	
+
+
+
+<script src="__PUBLIC__/Home/elevateZoom/jquery.elevateZoom.min.js" type="text/javascript"></script>
+<script src="__PUBLIC__/Home/fancybox/jquery.fancybox.pack.js" type="text/javascript"></script>
+
+ <script type="text/javascript"><!--
+$(document).ready(function(){
+  if ($(window).width() >= 768) {
+    $('#elevate-zoom').elevateZoom({
+      zoomWindowFadeIn: 500,//镜头窗口淡入速度 
+      zoomWindowFadeOut: 500,//镜头窗口淡出速度 
+      lensFadeIn: 500,//透镜淡入速度 
+      lensFadeOut: 500,//透镜淡出速度 
+      // lensShape: 'basic',
+      // lensSize: 150,
+      zoomWindowOffetx: 30,
+      // zoomWindowWidth: 450,
+      // zoomWindowHeight: 450,
+      borderSize: 1,
+      borderColour: '#eaeaea',
+      gallery: 'product-thumbnail-gallery',
+      galleryActiveClass: 'active',
+      cursor:'pointer',
+    });
+
+  } else {
+    $('.elevatezoom-gallery').fancybox();
+    $('.elevate-zoom-preview a').bind('click', function(e) {
+      $('.elevatezoom-gallery').eq(0).trigger('click');
+      return false;
+    });
+  }
+});
+</script>
+
+<script>
+// 商品属性获取
+$('a[href="#tab-attribute"]:eq(0)').click(function(){
+	var target = $(this);
+	// 不需要重复获取属性数据
+	if (target.data('completed') == 'yes') return;
+
+
+	var url = '{:U('/goodsAjax')}';
+	var data = {
+		'goods_id': {$goods['goods_id']},
+		'type': 'attribute',
+	};
+	$.get(url, data, function(response){
+
+		if (response.error == 0) {
+			for(var i=0; i<response.rows.length; ++i) {
+				var attribute = response.rows[i];
+				// 利用短路运算初始化
+				attribute.value_list = attribute.value_list || '';
+				trElement = '<tr> <td>' + attribute.title + '</td> <td>' + attribute.value + attribute.value_list + '</td> </tr>';
+				$('#tab-attribute>table>tbody').append(trElement);
+			}
+			target.data('completed', 'yes');
+		}
+	}, 'json');
+});
+
+</script>
+
+      <script type="text/javascript"><!--
+      $('#button-cart').on('click', function() {
+      });
+      //--></script>
+
+      <script type="text/javascript"><!--
+      $('#review').delegate('.pagination a', 'click', function(e) {
+          e.preventDefault();
+
+          $('#review').fadeOut('slow');
+
+          $('#review').load(this.href);
+
+          $('#review').fadeIn('slow');
+      });
+
+      // $('#review').load('');
+
+      $('#button-review').on('click', function() {
+      });
+
+      $("#product select[name*='option']").change(function(){
+      });
+
+      $("#product input[type='radio'], #product input[type='checkbox']").on("click",function(){
+      });
+
+      $('.quantity-input-wrapper a').click(function(e){
+        e.preventDefault();
+        if( $(this).hasClass('quantity-up')) {
+          $('#input-quantity').val( parseInt($('#input-quantity').val()) + 1 );
+        } else {
+          if( parseInt($('#input-quantity').val())  > 1 ) {
+            $('#input-quantity').val( parseInt($('#input-quantity').val()) - 1 );
+          }
+        }
+      });
+
+      $("#product input[name*=\'quantity\']").keyup(function() {
+      });
+
+      $("#product input[name*=\'quantity\']").on("focusout", function(){
+      });
+
+      function refresh_price()
+      {
+
+      }
+      //--> </script>
+
+
+
+	</block>

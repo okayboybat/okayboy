@@ -1,0 +1,41 @@
+<include file="common/gusthead" />
+<article class="blogs">
+<h1 class="t_nav"><span>既然来了，那么就留下你的足迹吧！</span>
+<a href="" class="n1">DataCenter</a></h1>
+
+<div class="bloglist left">
+	<div class="personal">
+		<ul>
+			<li><span>昵称：</span>{$personallist['nickname']}</li>
+			<li><span>签名：</span>{$personallist['autograph']}</li>
+			<li><span>性别 ：</span>
+				<if condition="$personallist['gender'] eq 1">
+					男
+				<else />
+					女
+				</if>
+			</li>
+			<li><span>生日：</span>{$personallist['birthday']}</li>
+			<li><span>所在地：</span>{$personallist['localtion']}<li>
+			<li><span>手机：</span>{:substr_replace($personallist['phone'],'****',3,4)}</li>
+			<li><h3><a href="{:U('/?????id='.$personallist['personal_id'])}">他发表的文章</a></h3><li>
+			<div style="width:600px;">
+     		 	<h2>给他留言</h2>
+		        <form action="{:U('/helist?id='.$personallist['personal_id'])}" method="post">
+		            <textarea rows="5" cols="90" name="content"></textarea>
+		            <if condition="session('?user')">
+		            	<input type="submit" value="Publish" style="position:relative; left:600px;top: -70px;">
+		            <else />
+		            	<a style="position:relative;left:600px;top:-70px;" onclick="hai()">留言</a>
+			    		<script>
+							function hai(){alert('请先登录!')}
+						</script>
+    				</if>
+		        </form> 
+      		</div> 
+		</ul>
+	</div>	
+</div>
+<include file="common/right" />
+</article>
+<include file="common/footer" />

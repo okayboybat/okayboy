@@ -1,0 +1,22 @@
+[ 2016-09-07T09:19:58+08:00 ] 210.13.75.250 /favicon.ico
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000017s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000740s ]
+
+[ 2016-09-07T13:48:59+08:00 ] 42.156.138.75 /artcontent/id/javascript:void(0);
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000018s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000739s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000966s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001036s ]
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ':void(0); ) LIMIT 1' at line 1
+ [ SQL语句 ] : SELECT * FROM article a left join personal p on a.user_id=p.user_id  WHERE ( article_id=javascript:void(0); ) LIMIT 1  
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ':void(0); ) LIMIT 1' at line 1
+ [ SQL语句 ] : SELECT * FROM article a left join personal p on a.user_id=p.user_id  WHERE ( article_id=javascript:void(0); ) LIMIT 1  
+
+[ 2016-09-07T19:56:29+08:00 ] 210.13.75.250 /favicon.ico
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000018s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000784s ]
+

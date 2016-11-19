@@ -1,0 +1,1 @@
+a:7:{i:0;s:11:"relation_id";i:1;s:8:"username";i:2;s:5:"email";i:3;s:5:"theme";i:4;s:7:"content";s:3:"_pk";s:11:"relation_id";s:5:"_type";a:5:{s:11:"relation_id";s:7:"int(11)";s:8:"username";s:11:"varchar(15)";s:5:"email";s:11:"varchar(40)";s:5:"theme";s:12:"varchar(128)";s:7:"content";s:4:"text";}}

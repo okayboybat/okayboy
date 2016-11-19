@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<dwsync>
+<file name="AgentCheckBehavior.class.php" server="9fcd069a.7host.cn:90" local="131237379445891386" remote="131185980600000000" Dst="0" />
+<file name="BorisBehavior.class.php" server="9fcd069a.7host.cn:90" local="131237379446360132" remote="131185980600000000" Dst="0" />
+<file name="BrowserCheckBehavior.class.php" server="9fcd069a.7host.cn:90" local="131237379446828808" remote="131185980600000000" Dst="0" />
+<file name="BuildLiteBehavior.class.php" server="9fcd069a.7host.cn:90" local="131237379447610152" remote="131185980600000000" Dst="0" />
+<file name="CheckActionRouteBehavior.class.php" server="9fcd069a.7host.cn:90" local="131237379448703919" remote="131185980600000000" Dst="0" />
+<file name="CheckLangBehavior.class.php" server="9fcd069a.7host.cn:90" local="131237379448860078" remote="131185980600000000" Dst="0" />
+<file name="CronRunBehavior.class.php" server="9fcd069a.7host.cn:90" local="131237379450578848" remote="131185980600000000" Dst="0" />
+<file name="ContentReplaceBehavior.class.php" server="9fcd069a.7host.cn:90" local="131237379450578848" remote="131185980600000000" Dst="0" />
+<file name="ChromeShowPageTraceBehavior.class.php" server="9fcd069a.7host.cn:90" local="131237379451360207" remote="131185980600000000" Dst="0" />
+<file name="ParseTemplateBehavior.class.php" server="9fcd069a.7host.cn:90" local="131237379452766377" remote="131185980600000000" Dst="0" />
+<file name="ReadHtmlCacheBehavior.class.php" server="9fcd069a.7host.cn:90" local="131237379453235235" remote="131185980600000000" Dst="0" />
+<file name="FireShowPageTraceBehavior.class.php" server="9fcd069a.7host.cn:90" local="131237379453720783" remote="131185980600000000" Dst="0" />
+<file name="RobotCheckBehavior.class.php" server="9fcd069a.7host.cn:90" local="131237379454502042" remote="131185980600000000" Dst="0" />
+<file name="ShowPageTraceBehavior.class.php" server="9fcd069a.7host.cn:90" local="131237379455127145" remote="131185980600000000" Dst="0" />
+<file name="ShowRuntimeBehavior.class.php" server="9fcd069a.7host.cn:90" local="131237379455439649" remote="131185980600000000" Dst="0" />
+<file name="TokenBuildBehavior.class.php" server="9fcd069a.7host.cn:90" local="131237379456533424" remote="131185980600000000" Dst="0" />
+<file name="UpgradeNoticeBehavior.class.php" server="9fcd069a.7host.cn:90" local="131237379457124474" remote="131185980600000000" Dst="0" />
+<file name="WriteHtmlCacheBehavior.class.php" server="9fcd069a.7host.cn:90" local="131237379457484402" remote="131185980600000000" Dst="0" />
+</dwsync>

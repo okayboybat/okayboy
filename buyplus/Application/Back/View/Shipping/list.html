@@ -1,0 +1,224 @@
+<extend name="Layout/back" />
+
+<block name="title">配送方式列表</block>
+
+<block name="content">
+
+	<div id="content">
+		<div class="page-header">
+			<div class="container-fluid">
+				<div class="pull-right">
+					<a href="{:U('add')}" data-toggle="tooltip" title="新增" class="btn btn-primary"> <i class="fa fa-plus"></i>
+					</a>
+					<button type="button" data-toggle="tooltip" title="删除" class="btn btn-danger" id="button-delete"> <i class="fa fa-trash-o"></i>
+					</button>
+				</div>
+				<h1>配送方式管理</h1>
+				<ul class="breadcrumb">
+					<li>
+						<a href="{:U('Manage/index')}">首页</a>
+					</li>
+					<li>
+						<a href="javascript:;">配送方式管理</a>
+					</li>
+				</ul>
+			</div>
+		</div>
+		<div class="container-fluid">
+			<div class="panel panel-default">
+				<div class="panel-heading">
+					<h3 class="panel-title">
+						<i class="fa fa-list"></i>
+						配送方式列表
+					</h3>
+				</div>
+				<div class="panel-body">
+					<div class="well">
+						<form action="{:U('list')}">
+						<div class="row">
+							<div class="col-sm-12">
+
+								<div class="form-group">
+									<label class="control-label" for="input-keyword">关键字</label>
+									<input type="text" name="keyword" value="{$search['keyword']}" placeholder="关键字" id="input-keyword" class="form-control" />
+								</div>
+
+
+								<button class="btn btn-primary pull-right" id="button-filter" type="submit">
+						            <i class="fa fa-search"></i>
+						            筛选
+						        </button>
+
+							</div>
+							
+						</div>
+						</form>
+					</div>
+					<form action="{:U('multi')}" method="post" enctype="multipart/form-data" id="form-list">
+						<input type="hidden" name="operate" value="" >
+						<div class="table-responsive">
+							<table class="table table-bordered table-hover">
+								<thead>
+									<tr>
+										<td style="width: 1px;" class="text-center">
+											<input type="checkbox" onclick="$('input[name*=\'selected\']').prop('checked', this.checked);" />
+										</td>
+										
+										<td class="text-left">
+											<if condition="$sort['field'] eq 'title' AND $sort['type'] eq 'asc'" >
+												<a href="{:U('list', ['keyword'=>$search['keyword'], 'sortField'=>'title', 'sortType'=>'desc'])}" class="asc">title</a>
+											<elseif condition="$sort['field'] eq 'title' AND $sort['type'] eq 'desc'" />
+												<a href="{:U('list', ['keyword'=>$search['keyword'], 'sortField'=>'title', 'sortType'=>'asc'])}" class="desc">title</a>
+											<else />
+												<a href="{:U('list', ['keyword'=>$search['keyword'], 'sortField'=>'title', 'sortType'=>'asc'])}">title</a>
+											</if>
+										</td>
+										<!-- 一个字段 -->
+
+
+										<td class="text-left">
+											<if condition="$sort['field'] eq 'description' AND $sort['type'] eq 'asc'" >
+												<a href="{:U('list', ['keyword'=>$search['keyword'], 'sortField'=>'description', 'sortType'=>'desc'])}" class="asc">description</a>
+											<elseif condition="$sort['field'] eq 'description' AND $sort['type'] eq 'desc'" />
+												<a href="{:U('list', ['keyword'=>$search['keyword'], 'sortField'=>'description', 'sortType'=>'asc'])}" class="desc">description</a>
+											<else />
+												<a href="{:U('list', ['keyword'=>$search['keyword'], 'sortField'=>'description', 'sortType'=>'asc'])}">description</a>
+											</if>
+										</td>
+										<!-- 一个字段 -->
+
+
+										<td class="text-left">
+											<if condition="$sort['field'] eq 'is_used' AND $sort['type'] eq 'asc'" >
+												<a href="{:U('list', ['keyword'=>$search['keyword'], 'sortField'=>'is_used', 'sortType'=>'desc'])}" class="asc">is_used</a>
+											<elseif condition="$sort['field'] eq 'is_used' AND $sort['type'] eq 'desc'" />
+												<a href="{:U('list', ['keyword'=>$search['keyword'], 'sortField'=>'is_used', 'sortType'=>'asc'])}" class="desc">is_used</a>
+											<else />
+												<a href="{:U('list', ['keyword'=>$search['keyword'], 'sortField'=>'is_used', 'sortType'=>'asc'])}">is_used</a>
+											</if>
+										</td>
+										<!-- 一个字段 -->
+
+
+										<td class="text-left">
+											<if condition="$sort['field'] eq 'is_default' AND $sort['type'] eq 'asc'" >
+												<a href="{:U('list', ['keyword'=>$search['keyword'], 'sortField'=>'is_default', 'sortType'=>'desc'])}" class="asc">is_default</a>
+											<elseif condition="$sort['field'] eq 'is_default' AND $sort['type'] eq 'desc'" />
+												<a href="{:U('list', ['keyword'=>$search['keyword'], 'sortField'=>'is_default', 'sortType'=>'asc'])}" class="desc">is_default</a>
+											<else />
+												<a href="{:U('list', ['keyword'=>$search['keyword'], 'sortField'=>'is_default', 'sortType'=>'asc'])}">is_default</a>
+											</if>
+										</td>
+										<!-- 一个字段 -->
+
+
+										<td class="text-left">
+											<if condition="$sort['field'] eq 'sort_number' AND $sort['type'] eq 'asc'" >
+												<a href="{:U('list', ['keyword'=>$search['keyword'], 'sortField'=>'sort_number', 'sortType'=>'desc'])}" class="asc">sort_number</a>
+											<elseif condition="$sort['field'] eq 'sort_number' AND $sort['type'] eq 'desc'" />
+												<a href="{:U('list', ['keyword'=>$search['keyword'], 'sortField'=>'sort_number', 'sortType'=>'asc'])}" class="desc">sort_number</a>
+											<else />
+												<a href="{:U('list', ['keyword'=>$search['keyword'], 'sortField'=>'sort_number', 'sortType'=>'asc'])}">sort_number</a>
+											</if>
+										</td>
+										<!-- 一个字段 -->
+
+
+										<td class="text-left">
+											<if condition="$sort['field'] eq 'key' AND $sort['type'] eq 'asc'" >
+												<a href="{:U('list', ['keyword'=>$search['keyword'], 'sortField'=>'key', 'sortType'=>'desc'])}" class="asc">key</a>
+											<elseif condition="$sort['field'] eq 'key' AND $sort['type'] eq 'desc'" />
+												<a href="{:U('list', ['keyword'=>$search['keyword'], 'sortField'=>'key', 'sortType'=>'asc'])}" class="desc">key</a>
+											<else />
+												<a href="{:U('list', ['keyword'=>$search['keyword'], 'sortField'=>'key', 'sortType'=>'asc'])}">key</a>
+											</if>
+										</td>
+										<!-- 一个字段 -->
+
+
+										<td class="text-right">管理</td>
+									</tr>
+								</thead>
+								<tbody>
+
+									<volist name="list" id="row">
+									<tr>
+										<td class="text-center">
+											<input type="checkbox" name="selected[]" value="{$row['shipping_id']}" />
+										</td>
+										
+									<!-- 一个字段的数据 -->
+									<td class="text-left">{$row['title']}</td>
+
+									<!-- 一个字段的数据 -->
+									<td class="text-left">{$row['description']}</td>
+
+									<!-- 一个字段的数据 -->
+									<td class="text-left">{$row['is_used']}</td>
+
+									<!-- 一个字段的数据 -->
+									<td class="text-left">{$row['is_default']}</td>
+
+									<!-- 一个字段的数据 -->
+									<td class="text-left">{$row['sort_number']}</td>
+
+									<!-- 一个字段的数据 -->
+									<td class="text-left">{$row['key']}</td>
+
+										<td class="text-right">
+											
+										<if condition="$row['is_new']">
+											<a href="#" data-toggle="tooltip" title="添加" class="btn btn-primary">
+												<i class="fa fa-plus"></i>
+											</a>
+										</if>
+
+										<if condition="$row['is_delete']">
+											<a href="#" data-toggle="tooltip" title="删除" class="btn btn-primary">
+												<i class="fa fa-minus"></i>
+											</a>
+										</if>
+
+											<a href="{:U('edit', ['shipping_id'=>$row['shipping_id']])}" data-toggle="tooltip" title="编辑" class="btn btn-primary">
+												<i class="fa fa-pencil"></i>
+											</a>
+										</td>
+									</tr>
+								</volist>
+
+							</tbody>
+						</table>
+					</div>
+				</form>
+				<div class="row">
+
+					{$page_html}
+
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+</block>
+
+
+<block name="bottomJS">
+
+<script>
+$('#button-delete').click(function(){
+	var result = confirm('确认删除?');
+
+	// 如果确认, 则设置operate, 提交表单
+	if (result) {
+		$('input[name=operate]:eq(0)').val('delete'); 
+		$('#form-list').submit();
+	}
+	
+	// 返回confirm的结果
+	return result;
+}); 
+
+</script>
+
+</block>

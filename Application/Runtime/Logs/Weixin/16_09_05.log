@@ -1,0 +1,24 @@
+[ 2016-09-05T23:09:41+08:00 ] 60.10.117.60 /weixin.php/Index/getwxAccessToken
+ERR: 无法加载控制器:Index
+
+[ 2016-09-05T23:09:45+08:00 ] 60.10.117.60 /weixin.php/Index/getwxAccessToken
+ERR: 无法加载控制器:Index
+
+[ 2016-09-05T23:09:54+08:00 ] 60.10.117.60 /weixin.php/Index/getwxAccessToken
+ERR: 无法加载控制器:Index
+
+[ 2016-09-05T23:10:30+08:00 ] 103.7.30.105 /weixin.php/Index/index?signature=047579e9f73e95d9f64cdf4ca60b01e39599907a&timestamp=1473088235&nonce=2091247635&openid=o5T-es1qbmw5EuSN8-Pa4a5qH7N8&encrypt_type=aes&msg_signature=5deb42c5b9aae8d75534b70a8d5774aec0336f94
+ERR: 无法加载控制器:Index
+
+[ 2016-09-05T23:12:11+08:00 ] 60.14.254.4 /weixin.php/Index/index
+ERR: 无法加载控制器:Index
+
+[ 2016-09-05T23:12:17+08:00 ] 60.14.254.4 /weixin.php/Index/index
+ERR: 无法加载控制器:Index
+
+[ 2016-09-05T23:35:48+08:00 ] 103.7.30.105 /weixin.php/Index/index?signature=c302aa5a4493c99ed9665ba987752736aa901e10&timestamp=1473089753&nonce=1120508021&openid=o5T-es1qbmw5EuSN8-Pa4a5qH7N8&encrypt_type=aes&msg_signature=035b8cc9fa8156a0af48a929f9150f354b358534
+ERR: 1146:Table 'a18659801344.index' doesn't exist
+ [ SQL语句 ] : SHOW COLUMNS FROM `index`
+ERR: 1146:Table 'a18659801344.index' doesn't exist
+ [ SQL语句 ] : SHOW COLUMNS FROM `index`
+

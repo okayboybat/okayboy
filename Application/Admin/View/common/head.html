@@ -1,0 +1,37 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>余温博客</title>
+<meta name="keywords" content="个人博客,余温个人博客," />
+<meta name="description" content="" />
+<link href="__PUBLIC__/Home/css/index.css" rel="stylesheet">
+<link href="__PUBLIC__/Home/css/style.css" rel="stylesheet">
+<link href="__PUBLIC__/Home/css/article.css" rel="stylesheet">
+<link href="__PUBLIC__/Home/css/ty.css" rel="stylesheet">
+<link href="__PUBLIC__/home/css/new.css" rel="stylesheet">
+<!--[if lt IE 9]>
+<script src="__PUBLIC__/Home/js/modernizr.js"></script>
+<![endif]-->
+</head>
+<body>
+
+<header>
+	<div><div style="float:right;margin-top:5px;">
+		<if condition="session('admin') eq true">
+		欢迎您！ {:session('admin')['email']}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+		<else />
+			<script language='javascript'>document.location = ''</script>
+		</if>
+	</div></div>
+  <div id="logo"><a href="/"></a></div>
+  <nav class="topnav" id="topnav">
+<if condition="session('admin') eq true">
+	 <a href="{:U('/relation')}"><span>首页</span><span class="en">Honme</span></a> 
+	 <a href="{:U('/userlist')}"><span>用户管理</span><span class="en">User</span></a>    
+	 <a href="{:U('/catelist')}"><span>分类管理</span><span class="en">Cate</span></a>
+	 <a href="{:U('/article')}"><span>文章管理</span><span class="en">Article</span></a>
+<else />
+</if>
+  </nav>
+</header>

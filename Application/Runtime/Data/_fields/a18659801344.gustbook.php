@@ -1,0 +1,1 @@
+a:6:{i:0;s:11:"gustbook_id";i:1;s:7:"content";i:2;s:8:"add_time";i:3;s:7:"user_id";s:3:"_pk";s:11:"gustbook_id";s:5:"_type";a:4:{s:11:"gustbook_id";s:7:"int(11)";s:7:"content";s:4:"text";s:8:"add_time";s:7:"int(11)";s:7:"user_id";s:7:"int(11)";}}

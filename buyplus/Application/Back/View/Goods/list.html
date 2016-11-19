@@ -1,0 +1,621 @@
+<extend name="Layout/back" />
+
+<block name="title">商品列表</block>
+
+<block name="content">
+
+	<div id="content">
+		<div class="page-header">
+			<div class="container-fluid">
+				<div class="pull-right">
+					<a href="{:U('add')}" data-toggle="tooltip" title="新增" class="btn btn-primary"> <i class="fa fa-plus"></i>
+					</a>
+					<button type="button" data-toggle="tooltip" title="删除" class="btn btn-danger" id="button-delete"> <i class="fa fa-trash-o"></i>
+					</button>
+				</div>
+				<h1>商品管理</h1>
+				<ul class="breadcrumb">
+					<li>
+						<a href="{:U('Manage/index')}">首页</a>
+					</li>
+					<li>
+						<a href="javascript:;">商品管理</a>
+					</li>
+				</ul>
+			</div>
+		</div>
+		<div class="container-fluid">
+			<div class="panel panel-default">
+				<div class="panel-heading">
+					<h3 class="panel-title">
+						<i class="fa fa-list"></i>
+						商品列表
+					</h3>
+				</div>
+				<div class="panel-body">
+					<div class="well">
+						<form action="{:U('list')}">
+						<div class="row">
+							<div class="col-sm-12">
+
+								<div class="form-group">
+									<label class="control-label" for="input-keyword">关键字</label>
+									<input type="text" name="keyword" value="{$search['keyword']}" placeholder="关键字" id="input-keyword" class="form-control" />
+								</div>
+
+
+								<button class="btn btn-primary pull-right" id="button-filter" type="submit">
+						            <i class="fa fa-search"></i>
+						            筛选
+						        </button>
+
+							</div>
+							
+						</div>
+						</form>
+					</div>
+					<form action="{:U('multi')}" method="post" enctype="multipart/form-data" id="form-list">
+						<input type="hidden" name="operate" value="" >
+						<div class="table-responsive">
+							<table class="table table-bordered table-hover">
+								<thead>
+									<tr>
+										<td style="width: 1px;" class="text-center">
+											<input type="checkbox" onclick="$('input[name*=\'selected\']').prop('checked', this.checked);" />
+										</td>
+										
+										<td class="text-left">
+											<if condition="$sort['field'] eq 'name' AND $sort['type'] eq 'asc'" >
+												<a href="{:U('list', ['keyword'=>$search['keyword'], 'sortField'=>'name', 'sortType'=>'desc'])}" class="asc">name</a>
+											<elseif condition="$sort['field'] eq 'name' AND $sort['type'] eq 'desc'" />
+												<a href="{:U('list', ['keyword'=>$search['keyword'], 'sortField'=>'name', 'sortType'=>'asc'])}" class="desc">name</a>
+											<else />
+												<a href="{:U('list', ['keyword'=>$search['keyword'], 'sortField'=>'name', 'sortType'=>'asc'])}">name</a>
+											</if>
+										</td>
+										<!-- 一个字段 -->
+
+
+										<td class="text-left">
+											<if condition="$sort['field'] eq 'image' AND $sort['type'] eq 'asc'" >
+												<a href="{:U('list', ['keyword'=>$search['keyword'], 'sortField'=>'image', 'sortType'=>'desc'])}" class="asc">image</a>
+											<elseif condition="$sort['field'] eq 'image' AND $sort['type'] eq 'desc'" />
+												<a href="{:U('list', ['keyword'=>$search['keyword'], 'sortField'=>'image', 'sortType'=>'asc'])}" class="desc">image</a>
+											<else />
+												<a href="{:U('list', ['keyword'=>$search['keyword'], 'sortField'=>'image', 'sortType'=>'asc'])}">image</a>
+											</if>
+										</td>
+										<!-- 一个字段 -->
+
+
+										<td class="text-left">
+											<if condition="$sort['field'] eq 'image_thumb' AND $sort['type'] eq 'asc'" >
+												<a href="{:U('list', ['keyword'=>$search['keyword'], 'sortField'=>'image_thumb', 'sortType'=>'desc'])}" class="asc">image_thumb</a>
+											<elseif condition="$sort['field'] eq 'image_thumb' AND $sort['type'] eq 'desc'" />
+												<a href="{:U('list', ['keyword'=>$search['keyword'], 'sortField'=>'image_thumb', 'sortType'=>'asc'])}" class="desc">image_thumb</a>
+											<else />
+												<a href="{:U('list', ['keyword'=>$search['keyword'], 'sortField'=>'image_thumb', 'sortType'=>'asc'])}">image_thumb</a>
+											</if>
+										</td>
+										<!-- 一个字段 -->
+
+
+										<td class="text-left">
+											<if condition="$sort['field'] eq 'SKU' AND $sort['type'] eq 'asc'" >
+												<a href="{:U('list', ['keyword'=>$search['keyword'], 'sortField'=>'SKU', 'sortType'=>'desc'])}" class="asc">SKU</a>
+											<elseif condition="$sort['field'] eq 'SKU' AND $sort['type'] eq 'desc'" />
+												<a href="{:U('list', ['keyword'=>$search['keyword'], 'sortField'=>'SKU', 'sortType'=>'asc'])}" class="desc">SKU</a>
+											<else />
+												<a href="{:U('list', ['keyword'=>$search['keyword'], 'sortField'=>'SKU', 'sortType'=>'asc'])}">SKU</a>
+											</if>
+										</td>
+										<!-- 一个字段 -->
+
+
+										<td class="text-left">
+											<if condition="$sort['field'] eq 'UPC' AND $sort['type'] eq 'asc'" >
+												<a href="{:U('list', ['keyword'=>$search['keyword'], 'sortField'=>'UPC', 'sortType'=>'desc'])}" class="asc">UPC</a>
+											<elseif condition="$sort['field'] eq 'UPC' AND $sort['type'] eq 'desc'" />
+												<a href="{:U('list', ['keyword'=>$search['keyword'], 'sortField'=>'UPC', 'sortType'=>'asc'])}" class="desc">UPC</a>
+											<else />
+												<a href="{:U('list', ['keyword'=>$search['keyword'], 'sortField'=>'UPC', 'sortType'=>'asc'])}">UPC</a>
+											</if>
+										</td>
+										<!-- 一个字段 -->
+
+
+										<td class="text-left">
+											<if condition="$sort['field'] eq 'price' AND $sort['type'] eq 'asc'" >
+												<a href="{:U('list', ['keyword'=>$search['keyword'], 'sortField'=>'price', 'sortType'=>'desc'])}" class="asc">price</a>
+											<elseif condition="$sort['field'] eq 'price' AND $sort['type'] eq 'desc'" />
+												<a href="{:U('list', ['keyword'=>$search['keyword'], 'sortField'=>'price', 'sortType'=>'asc'])}" class="desc">price</a>
+											<else />
+												<a href="{:U('list', ['keyword'=>$search['keyword'], 'sortField'=>'price', 'sortType'=>'asc'])}">price</a>
+											</if>
+										</td>
+										<!-- 一个字段 -->
+
+
+										<td class="text-left">
+											<if condition="$sort['field'] eq 'market_price' AND $sort['type'] eq 'asc'" >
+												<a href="{:U('list', ['keyword'=>$search['keyword'], 'sortField'=>'market_price', 'sortType'=>'desc'])}" class="asc">market_price</a>
+											<elseif condition="$sort['field'] eq 'market_price' AND $sort['type'] eq 'desc'" />
+												<a href="{:U('list', ['keyword'=>$search['keyword'], 'sortField'=>'market_price', 'sortType'=>'asc'])}" class="desc">market_price</a>
+											<else />
+												<a href="{:U('list', ['keyword'=>$search['keyword'], 'sortField'=>'market_price', 'sortType'=>'asc'])}">market_price</a>
+											</if>
+										</td>
+										<!-- 一个字段 -->
+
+
+										<td class="text-left">
+											<if condition="$sort['field'] eq 'quantity' AND $sort['type'] eq 'asc'" >
+												<a href="{:U('list', ['keyword'=>$search['keyword'], 'sortField'=>'quantity', 'sortType'=>'desc'])}" class="asc">quantity</a>
+											<elseif condition="$sort['field'] eq 'quantity' AND $sort['type'] eq 'desc'" />
+												<a href="{:U('list', ['keyword'=>$search['keyword'], 'sortField'=>'quantity', 'sortType'=>'asc'])}" class="desc">quantity</a>
+											<else />
+												<a href="{:U('list', ['keyword'=>$search['keyword'], 'sortField'=>'quantity', 'sortType'=>'asc'])}">quantity</a>
+											</if>
+										</td>
+										<!-- 一个字段 -->
+
+
+										<td class="text-left">
+											<if condition="$sort['field'] eq 'minimum' AND $sort['type'] eq 'asc'" >
+												<a href="{:U('list', ['keyword'=>$search['keyword'], 'sortField'=>'minimum', 'sortType'=>'desc'])}" class="asc">minimum</a>
+											<elseif condition="$sort['field'] eq 'minimum' AND $sort['type'] eq 'desc'" />
+												<a href="{:U('list', ['keyword'=>$search['keyword'], 'sortField'=>'minimum', 'sortType'=>'asc'])}" class="desc">minimum</a>
+											<else />
+												<a href="{:U('list', ['keyword'=>$search['keyword'], 'sortField'=>'minimum', 'sortType'=>'asc'])}">minimum</a>
+											</if>
+										</td>
+										<!-- 一个字段 -->
+
+
+										<td class="text-left">
+											<if condition="$sort['field'] eq 'is_subtract' AND $sort['type'] eq 'asc'" >
+												<a href="{:U('list', ['keyword'=>$search['keyword'], 'sortField'=>'is_subtract', 'sortType'=>'desc'])}" class="asc">is_subtract</a>
+											<elseif condition="$sort['field'] eq 'is_subtract' AND $sort['type'] eq 'desc'" />
+												<a href="{:U('list', ['keyword'=>$search['keyword'], 'sortField'=>'is_subtract', 'sortType'=>'asc'])}" class="desc">is_subtract</a>
+											<else />
+												<a href="{:U('list', ['keyword'=>$search['keyword'], 'sortField'=>'is_subtract', 'sortType'=>'asc'])}">is_subtract</a>
+											</if>
+										</td>
+										<!-- 一个字段 -->
+
+
+										<td class="text-left">
+											<if condition="$sort['field'] eq 'is_shipping' AND $sort['type'] eq 'asc'" >
+												<a href="{:U('list', ['keyword'=>$search['keyword'], 'sortField'=>'is_shipping', 'sortType'=>'desc'])}" class="asc">is_shipping</a>
+											<elseif condition="$sort['field'] eq 'is_shipping' AND $sort['type'] eq 'desc'" />
+												<a href="{:U('list', ['keyword'=>$search['keyword'], 'sortField'=>'is_shipping', 'sortType'=>'asc'])}" class="desc">is_shipping</a>
+											<else />
+												<a href="{:U('list', ['keyword'=>$search['keyword'], 'sortField'=>'is_shipping', 'sortType'=>'asc'])}">is_shipping</a>
+											</if>
+										</td>
+										<!-- 一个字段 -->
+
+
+										<td class="text-left">
+											<if condition="$sort['field'] eq 'date_available' AND $sort['type'] eq 'asc'" >
+												<a href="{:U('list', ['keyword'=>$search['keyword'], 'sortField'=>'date_available', 'sortType'=>'desc'])}" class="asc">date_available</a>
+											<elseif condition="$sort['field'] eq 'date_available' AND $sort['type'] eq 'desc'" />
+												<a href="{:U('list', ['keyword'=>$search['keyword'], 'sortField'=>'date_available', 'sortType'=>'asc'])}" class="desc">date_available</a>
+											<else />
+												<a href="{:U('list', ['keyword'=>$search['keyword'], 'sortField'=>'date_available', 'sortType'=>'asc'])}">date_available</a>
+											</if>
+										</td>
+										<!-- 一个字段 -->
+
+
+										<td class="text-left">
+											<if condition="$sort['field'] eq 'length' AND $sort['type'] eq 'asc'" >
+												<a href="{:U('list', ['keyword'=>$search['keyword'], 'sortField'=>'length', 'sortType'=>'desc'])}" class="asc">length</a>
+											<elseif condition="$sort['field'] eq 'length' AND $sort['type'] eq 'desc'" />
+												<a href="{:U('list', ['keyword'=>$search['keyword'], 'sortField'=>'length', 'sortType'=>'asc'])}" class="desc">length</a>
+											<else />
+												<a href="{:U('list', ['keyword'=>$search['keyword'], 'sortField'=>'length', 'sortType'=>'asc'])}">length</a>
+											</if>
+										</td>
+										<!-- 一个字段 -->
+
+
+										<td class="text-left">
+											<if condition="$sort['field'] eq 'width' AND $sort['type'] eq 'asc'" >
+												<a href="{:U('list', ['keyword'=>$search['keyword'], 'sortField'=>'width', 'sortType'=>'desc'])}" class="asc">width</a>
+											<elseif condition="$sort['field'] eq 'width' AND $sort['type'] eq 'desc'" />
+												<a href="{:U('list', ['keyword'=>$search['keyword'], 'sortField'=>'width', 'sortType'=>'asc'])}" class="desc">width</a>
+											<else />
+												<a href="{:U('list', ['keyword'=>$search['keyword'], 'sortField'=>'width', 'sortType'=>'asc'])}">width</a>
+											</if>
+										</td>
+										<!-- 一个字段 -->
+
+
+										<td class="text-left">
+											<if condition="$sort['field'] eq 'height' AND $sort['type'] eq 'asc'" >
+												<a href="{:U('list', ['keyword'=>$search['keyword'], 'sortField'=>'height', 'sortType'=>'desc'])}" class="asc">height</a>
+											<elseif condition="$sort['field'] eq 'height' AND $sort['type'] eq 'desc'" />
+												<a href="{:U('list', ['keyword'=>$search['keyword'], 'sortField'=>'height', 'sortType'=>'asc'])}" class="desc">height</a>
+											<else />
+												<a href="{:U('list', ['keyword'=>$search['keyword'], 'sortField'=>'height', 'sortType'=>'asc'])}">height</a>
+											</if>
+										</td>
+										<!-- 一个字段 -->
+
+
+										<td class="text-left">
+											<if condition="$sort['field'] eq 'weight' AND $sort['type'] eq 'asc'" >
+												<a href="{:U('list', ['keyword'=>$search['keyword'], 'sortField'=>'weight', 'sortType'=>'desc'])}" class="asc">weight</a>
+											<elseif condition="$sort['field'] eq 'weight' AND $sort['type'] eq 'desc'" />
+												<a href="{:U('list', ['keyword'=>$search['keyword'], 'sortField'=>'weight', 'sortType'=>'asc'])}" class="desc">weight</a>
+											<else />
+												<a href="{:U('list', ['keyword'=>$search['keyword'], 'sortField'=>'weight', 'sortType'=>'asc'])}">weight</a>
+											</if>
+										</td>
+										<!-- 一个字段 -->
+
+
+										<td class="text-left">
+											<if condition="$sort['field'] eq 'description' AND $sort['type'] eq 'asc'" >
+												<a href="{:U('list', ['keyword'=>$search['keyword'], 'sortField'=>'description', 'sortType'=>'desc'])}" class="asc">description</a>
+											<elseif condition="$sort['field'] eq 'description' AND $sort['type'] eq 'desc'" />
+												<a href="{:U('list', ['keyword'=>$search['keyword'], 'sortField'=>'description', 'sortType'=>'asc'])}" class="desc">description</a>
+											<else />
+												<a href="{:U('list', ['keyword'=>$search['keyword'], 'sortField'=>'description', 'sortType'=>'asc'])}">description</a>
+											</if>
+										</td>
+										<!-- 一个字段 -->
+
+
+										<td class="text-left">
+											<if condition="$sort['field'] eq 'is_status' AND $sort['type'] eq 'asc'" >
+												<a href="{:U('list', ['keyword'=>$search['keyword'], 'sortField'=>'is_status', 'sortType'=>'desc'])}" class="asc">is_status</a>
+											<elseif condition="$sort['field'] eq 'is_status' AND $sort['type'] eq 'desc'" />
+												<a href="{:U('list', ['keyword'=>$search['keyword'], 'sortField'=>'is_status', 'sortType'=>'asc'])}" class="desc">is_status</a>
+											<else />
+												<a href="{:U('list', ['keyword'=>$search['keyword'], 'sortField'=>'is_status', 'sortType'=>'asc'])}">is_status</a>
+											</if>
+										</td>
+										<!-- 一个字段 -->
+
+
+										<td class="text-left">
+											<if condition="$sort['field'] eq 'is_deleted' AND $sort['type'] eq 'asc'" >
+												<a href="{:U('list', ['keyword'=>$search['keyword'], 'sortField'=>'is_deleted', 'sortType'=>'desc'])}" class="asc">is_deleted</a>
+											<elseif condition="$sort['field'] eq 'is_deleted' AND $sort['type'] eq 'desc'" />
+												<a href="{:U('list', ['keyword'=>$search['keyword'], 'sortField'=>'is_deleted', 'sortType'=>'asc'])}" class="desc">is_deleted</a>
+											<else />
+												<a href="{:U('list', ['keyword'=>$search['keyword'], 'sortField'=>'is_deleted', 'sortType'=>'asc'])}">is_deleted</a>
+											</if>
+										</td>
+										<!-- 一个字段 -->
+
+
+										<td class="text-left">
+											<if condition="$sort['field'] eq 'is_new' AND $sort['type'] eq 'asc'" >
+												<a href="{:U('list', ['keyword'=>$search['keyword'], 'sortField'=>'is_new', 'sortType'=>'desc'])}" class="asc">is_new</a>
+											<elseif condition="$sort['field'] eq 'is_new' AND $sort['type'] eq 'desc'" />
+												<a href="{:U('list', ['keyword'=>$search['keyword'], 'sortField'=>'is_new', 'sortType'=>'asc'])}" class="desc">is_new</a>
+											<else />
+												<a href="{:U('list', ['keyword'=>$search['keyword'], 'sortField'=>'is_new', 'sortType'=>'asc'])}">is_new</a>
+											</if>
+										</td>
+										<!-- 一个字段 -->
+
+
+										<td class="text-left">
+											<if condition="$sort['field'] eq 'is_promote' AND $sort['type'] eq 'asc'" >
+												<a href="{:U('list', ['keyword'=>$search['keyword'], 'sortField'=>'is_promote', 'sortType'=>'desc'])}" class="asc">is_promote</a>
+											<elseif condition="$sort['field'] eq 'is_promote' AND $sort['type'] eq 'desc'" />
+												<a href="{:U('list', ['keyword'=>$search['keyword'], 'sortField'=>'is_promote', 'sortType'=>'asc'])}" class="desc">is_promote</a>
+											<else />
+												<a href="{:U('list', ['keyword'=>$search['keyword'], 'sortField'=>'is_promote', 'sortType'=>'asc'])}">is_promote</a>
+											</if>
+										</td>
+										<!-- 一个字段 -->
+
+
+										<td class="text-left">
+											<if condition="$sort['field'] eq 'sort_number' AND $sort['type'] eq 'asc'" >
+												<a href="{:U('list', ['keyword'=>$search['keyword'], 'sortField'=>'sort_number', 'sortType'=>'desc'])}" class="asc">sort_number</a>
+											<elseif condition="$sort['field'] eq 'sort_number' AND $sort['type'] eq 'desc'" />
+												<a href="{:U('list', ['keyword'=>$search['keyword'], 'sortField'=>'sort_number', 'sortType'=>'asc'])}" class="desc">sort_number</a>
+											<else />
+												<a href="{:U('list', ['keyword'=>$search['keyword'], 'sortField'=>'sort_number', 'sortType'=>'asc'])}">sort_number</a>
+											</if>
+										</td>
+										<!-- 一个字段 -->
+
+
+										<td class="text-left">
+											<if condition="$sort['field'] eq 'tax_id' AND $sort['type'] eq 'asc'" >
+												<a href="{:U('list', ['keyword'=>$search['keyword'], 'sortField'=>'tax_id', 'sortType'=>'desc'])}" class="asc">tax_id</a>
+											<elseif condition="$sort['field'] eq 'tax_id' AND $sort['type'] eq 'desc'" />
+												<a href="{:U('list', ['keyword'=>$search['keyword'], 'sortField'=>'tax_id', 'sortType'=>'asc'])}" class="desc">tax_id</a>
+											<else />
+												<a href="{:U('list', ['keyword'=>$search['keyword'], 'sortField'=>'tax_id', 'sortType'=>'asc'])}">tax_id</a>
+											</if>
+										</td>
+										<!-- 一个字段 -->
+
+
+										<td class="text-left">
+											<if condition="$sort['field'] eq 'brand_id' AND $sort['type'] eq 'asc'" >
+												<a href="{:U('list', ['keyword'=>$search['keyword'], 'sortField'=>'brand_id', 'sortType'=>'desc'])}" class="asc">brand_id</a>
+											<elseif condition="$sort['field'] eq 'brand_id' AND $sort['type'] eq 'desc'" />
+												<a href="{:U('list', ['keyword'=>$search['keyword'], 'sortField'=>'brand_id', 'sortType'=>'asc'])}" class="desc">brand_id</a>
+											<else />
+												<a href="{:U('list', ['keyword'=>$search['keyword'], 'sortField'=>'brand_id', 'sortType'=>'asc'])}">brand_id</a>
+											</if>
+										</td>
+										<!-- 一个字段 -->
+
+
+										<td class="text-left">
+											<if condition="$sort['field'] eq 'category_id' AND $sort['type'] eq 'asc'" >
+												<a href="{:U('list', ['keyword'=>$search['keyword'], 'sortField'=>'category_id', 'sortType'=>'desc'])}" class="asc">category_id</a>
+											<elseif condition="$sort['field'] eq 'category_id' AND $sort['type'] eq 'desc'" />
+												<a href="{:U('list', ['keyword'=>$search['keyword'], 'sortField'=>'category_id', 'sortType'=>'asc'])}" class="desc">category_id</a>
+											<else />
+												<a href="{:U('list', ['keyword'=>$search['keyword'], 'sortField'=>'category_id', 'sortType'=>'asc'])}">category_id</a>
+											</if>
+										</td>
+										<!-- 一个字段 -->
+
+
+										<td class="text-left">
+											<if condition="$sort['field'] eq 'length_unit_id' AND $sort['type'] eq 'asc'" >
+												<a href="{:U('list', ['keyword'=>$search['keyword'], 'sortField'=>'length_unit_id', 'sortType'=>'desc'])}" class="asc">length_unit_id</a>
+											<elseif condition="$sort['field'] eq 'length_unit_id' AND $sort['type'] eq 'desc'" />
+												<a href="{:U('list', ['keyword'=>$search['keyword'], 'sortField'=>'length_unit_id', 'sortType'=>'asc'])}" class="desc">length_unit_id</a>
+											<else />
+												<a href="{:U('list', ['keyword'=>$search['keyword'], 'sortField'=>'length_unit_id', 'sortType'=>'asc'])}">length_unit_id</a>
+											</if>
+										</td>
+										<!-- 一个字段 -->
+
+
+										<td class="text-left">
+											<if condition="$sort['field'] eq 'weight_unit_id' AND $sort['type'] eq 'asc'" >
+												<a href="{:U('list', ['keyword'=>$search['keyword'], 'sortField'=>'weight_unit_id', 'sortType'=>'desc'])}" class="asc">weight_unit_id</a>
+											<elseif condition="$sort['field'] eq 'weight_unit_id' AND $sort['type'] eq 'desc'" />
+												<a href="{:U('list', ['keyword'=>$search['keyword'], 'sortField'=>'weight_unit_id', 'sortType'=>'asc'])}" class="desc">weight_unit_id</a>
+											<else />
+												<a href="{:U('list', ['keyword'=>$search['keyword'], 'sortField'=>'weight_unit_id', 'sortType'=>'asc'])}">weight_unit_id</a>
+											</if>
+										</td>
+										<!-- 一个字段 -->
+
+
+										<td class="text-left">
+											<if condition="$sort['field'] eq 'stock_status_id' AND $sort['type'] eq 'asc'" >
+												<a href="{:U('list', ['keyword'=>$search['keyword'], 'sortField'=>'stock_status_id', 'sortType'=>'desc'])}" class="asc">stock_status_id</a>
+											<elseif condition="$sort['field'] eq 'stock_status_id' AND $sort['type'] eq 'desc'" />
+												<a href="{:U('list', ['keyword'=>$search['keyword'], 'sortField'=>'stock_status_id', 'sortType'=>'asc'])}" class="desc">stock_status_id</a>
+											<else />
+												<a href="{:U('list', ['keyword'=>$search['keyword'], 'sortField'=>'stock_status_id', 'sortType'=>'asc'])}">stock_status_id</a>
+											</if>
+										</td>
+										<!-- 一个字段 -->
+
+
+										<td class="text-left">
+											<if condition="$sort['field'] eq 'meta_title' AND $sort['type'] eq 'asc'" >
+												<a href="{:U('list', ['keyword'=>$search['keyword'], 'sortField'=>'meta_title', 'sortType'=>'desc'])}" class="asc">meta_title</a>
+											<elseif condition="$sort['field'] eq 'meta_title' AND $sort['type'] eq 'desc'" />
+												<a href="{:U('list', ['keyword'=>$search['keyword'], 'sortField'=>'meta_title', 'sortType'=>'asc'])}" class="desc">meta_title</a>
+											<else />
+												<a href="{:U('list', ['keyword'=>$search['keyword'], 'sortField'=>'meta_title', 'sortType'=>'asc'])}">meta_title</a>
+											</if>
+										</td>
+										<!-- 一个字段 -->
+
+
+										<td class="text-left">
+											<if condition="$sort['field'] eq 'meta_keywords' AND $sort['type'] eq 'asc'" >
+												<a href="{:U('list', ['keyword'=>$search['keyword'], 'sortField'=>'meta_keywords', 'sortType'=>'desc'])}" class="asc">meta_keywords</a>
+											<elseif condition="$sort['field'] eq 'meta_keywords' AND $sort['type'] eq 'desc'" />
+												<a href="{:U('list', ['keyword'=>$search['keyword'], 'sortField'=>'meta_keywords', 'sortType'=>'asc'])}" class="desc">meta_keywords</a>
+											<else />
+												<a href="{:U('list', ['keyword'=>$search['keyword'], 'sortField'=>'meta_keywords', 'sortType'=>'asc'])}">meta_keywords</a>
+											</if>
+										</td>
+										<!-- 一个字段 -->
+
+
+										<td class="text-left">
+											<if condition="$sort['field'] eq 'meta_description' AND $sort['type'] eq 'asc'" >
+												<a href="{:U('list', ['keyword'=>$search['keyword'], 'sortField'=>'meta_description', 'sortType'=>'desc'])}" class="asc">meta_description</a>
+											<elseif condition="$sort['field'] eq 'meta_description' AND $sort['type'] eq 'desc'" />
+												<a href="{:U('list', ['keyword'=>$search['keyword'], 'sortField'=>'meta_description', 'sortType'=>'asc'])}" class="desc">meta_description</a>
+											<else />
+												<a href="{:U('list', ['keyword'=>$search['keyword'], 'sortField'=>'meta_description', 'sortType'=>'asc'])}">meta_description</a>
+											</if>
+										</td>
+										<!-- 一个字段 -->
+
+
+										<td class="text-left">
+											<if condition="$sort['field'] eq 'create_at' AND $sort['type'] eq 'asc'" >
+												<a href="{:U('list', ['keyword'=>$search['keyword'], 'sortField'=>'create_at', 'sortType'=>'desc'])}" class="asc">create_at</a>
+											<elseif condition="$sort['field'] eq 'create_at' AND $sort['type'] eq 'desc'" />
+												<a href="{:U('list', ['keyword'=>$search['keyword'], 'sortField'=>'create_at', 'sortType'=>'asc'])}" class="desc">create_at</a>
+											<else />
+												<a href="{:U('list', ['keyword'=>$search['keyword'], 'sortField'=>'create_at', 'sortType'=>'asc'])}">create_at</a>
+											</if>
+										</td>
+										<!-- 一个字段 -->
+
+
+										<td class="text-left">
+											<if condition="$sort['field'] eq 'update_at' AND $sort['type'] eq 'asc'" >
+												<a href="{:U('list', ['keyword'=>$search['keyword'], 'sortField'=>'update_at', 'sortType'=>'desc'])}" class="asc">update_at</a>
+											<elseif condition="$sort['field'] eq 'update_at' AND $sort['type'] eq 'desc'" />
+												<a href="{:U('list', ['keyword'=>$search['keyword'], 'sortField'=>'update_at', 'sortType'=>'asc'])}" class="desc">update_at</a>
+											<else />
+												<a href="{:U('list', ['keyword'=>$search['keyword'], 'sortField'=>'update_at', 'sortType'=>'asc'])}">update_at</a>
+											</if>
+										</td>
+										<!-- 一个字段 -->
+
+
+										<td class="text-right">管理</td>
+									</tr>
+								</thead>
+								<tbody>
+
+									<volist name="list" id="row">
+									<tr>
+										<td class="text-center">
+											<input type="checkbox" name="selected[]" value="{$row['goods_id']}" />
+										</td>
+										
+									<!-- 一个字段的数据 -->
+									<td class="text-left">{$row['name']}</td>
+
+									<!-- 一个字段的数据 -->
+									<td class="text-left">{$row['image']}</td>
+
+									<!-- 一个字段的数据 -->
+									<td class="text-left">{$row['image_thumb']}</td>
+
+									<!-- 一个字段的数据 -->
+									<td class="text-left">{$row['SKU']}</td>
+
+									<!-- 一个字段的数据 -->
+									<td class="text-left">{$row['UPC']}</td>
+
+									<!-- 一个字段的数据 -->
+									<td class="text-left">{$row['price']}</td>
+
+									<!-- 一个字段的数据 -->
+									<td class="text-left">{$row['market_price']}</td>
+
+									<!-- 一个字段的数据 -->
+									<td class="text-left">{$row['quantity']}</td>
+
+									<!-- 一个字段的数据 -->
+									<td class="text-left">{$row['minimum']}</td>
+
+									<!-- 一个字段的数据 -->
+									<td class="text-left">{$row['is_subtract']}</td>
+
+									<!-- 一个字段的数据 -->
+									<td class="text-left">{$row['is_shipping']}</td>
+
+									<!-- 一个字段的数据 -->
+									<td class="text-left">{$row['date_available']}</td>
+
+									<!-- 一个字段的数据 -->
+									<td class="text-left">{$row['length']}</td>
+
+									<!-- 一个字段的数据 -->
+									<td class="text-left">{$row['width']}</td>
+
+									<!-- 一个字段的数据 -->
+									<td class="text-left">{$row['height']}</td>
+
+									<!-- 一个字段的数据 -->
+									<td class="text-left">{$row['weight']}</td>
+
+									<!-- 一个字段的数据 -->
+									<td class="text-left">{$row['description']}</td>
+
+									<!-- 一个字段的数据 -->
+									<td class="text-left">{$row['is_status']}</td>
+
+									<!-- 一个字段的数据 -->
+									<td class="text-left">{$row['is_deleted']}</td>
+
+									<!-- 一个字段的数据 -->
+									<td class="text-left">{$row['is_new']}</td>
+
+									<!-- 一个字段的数据 -->
+									<td class="text-left">{$row['is_promote']}</td>
+
+									<!-- 一个字段的数据 -->
+									<td class="text-left">{$row['sort_number']}</td>
+
+									<!-- 一个字段的数据 -->
+									<td class="text-left">{$row['tax_id']}</td>
+
+									<!-- 一个字段的数据 -->
+									<td class="text-left">{$row['brand_id']}</td>
+
+									<!-- 一个字段的数据 -->
+									<td class="text-left">{$row['category_id']}</td>
+
+									<!-- 一个字段的数据 -->
+									<td class="text-left">{$row['length_unit_id']}</td>
+
+									<!-- 一个字段的数据 -->
+									<td class="text-left">{$row['weight_unit_id']}</td>
+
+									<!-- 一个字段的数据 -->
+									<td class="text-left">{$row['stock_status_id']}</td>
+
+									<!-- 一个字段的数据 -->
+									<td class="text-left">{$row['meta_title']}</td>
+
+									<!-- 一个字段的数据 -->
+									<td class="text-left">{$row['meta_keywords']}</td>
+
+									<!-- 一个字段的数据 -->
+									<td class="text-left">{$row['meta_description']}</td>
+
+									<!-- 一个字段的数据 -->
+									<td class="text-left">{$row['create_at']}</td>
+
+									<!-- 一个字段的数据 -->
+									<td class="text-left">{$row['update_at']}</td>
+
+										<td class="text-right">
+											<a href="{:U('edit', ['goods_id'=>$row['goods_id']])}" data-toggle="tooltip" title="编辑" class="btn btn-primary">
+												<i class="fa fa-pencil"></i>
+											</a>
+
+
+											<a href="{:U('option', ['goods_id'=>$row['goods_id']])}" data-toggle="tooltip" title="选项管理" class="btn btn-primary">
+												O
+											</a>
+										</td>
+									</tr>
+								</volist>
+
+							</tbody>
+						</table>
+					</div>
+				</form>
+				<div class="row">
+
+					{$page_html}
+
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+</block>
+
+
+<block name="bottomJS">
+
+<script>
+$('#button-delete').click(function(){
+	var result = confirm('确认删除?');
+
+	// 如果确认, 则设置operate, 提交表单
+	if (result) {
+		$('input[name=operate]:eq(0)').val('delete'); 
+		$('#form-list').submit();
+	}
+	
+	// 返回confirm的结果
+	return result;
+}); 
+
+</script>
+
+</block>

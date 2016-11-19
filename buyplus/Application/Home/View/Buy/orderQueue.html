@@ -1,0 +1,44 @@
+<extend name="Layout/home" />
+
+<block name="title"></block>
+
+<block name="content">
+	<div class="container">
+		
+	</div>
+	<div class="row">
+		<div id="content" class="col-sm-12 text-center">
+			<h1 id="h1-info">订单正在处理中... 前边有 <span id="span-length">{$order_length}</span> 个订单正在处理,请等待</h1>
+		</div>
+	</div>
+</block>
+
+
+<block name="bottomJS">
+<script>
+
+setTimeout(orderStatus, 333);
+
+function orderStatus()
+{
+	var url = '{:U('/orderQueueAjax')}';
+	var data = {
+		user_id: '{$user['user_id']}',// 使用用户ID作为订单的标识,是否处理完毕的标识
+	};
+	$.get(url, data, function(response) {
+
+		if (response.complete) {
+			$('#h1-info').html('订单处理完成, 请继续执行, 付款等任务');
+		} else {
+			$('#span-length').html(response.length);
+			setTimeout(orderStatus, 333);	
+		}
+
+	}, 'json');
+	
+}
+
+</script>
+
+</block>
+
